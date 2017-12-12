@@ -1,6 +1,7 @@
 package util;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -163,20 +164,27 @@ public class Consola {
     }
 
 
-    /*public static void lerData(Date data) {
+    public static Calendar lerData(String texto) {
 
-        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-        data = sc.nextLine();
-        Date testDate = null;
-        try{
-            testDate = df.parse(date);
-        } catch (ParseException e){ System.out.println("invalid format");}
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String str = "";
+        int errodn;
+        Calendar data = new GregorianCalendar();
 
-        if (!df.format(testDate).equals(date)){
-            System.out.println("invalid date!!");
-        } else {
-            System.out.println("valid date");
-        }
+        do {
+            System.out.print(texto);
+            str = sc.nextLine();
 
-    }*/
+            errodn = 0;
+            try {
+
+                data.setTime(df.parse(str));
+            } catch (ParseException e) {
+                errodn = 1;
+                System.err.println("Data com formato inválido!");
+            }
+        } while (errodn == 1);
+
+        return data;
+    }
 }

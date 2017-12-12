@@ -72,7 +72,7 @@ public class Gestao {
         morada = Consola.lerString("Indique a morada do funcionario: ");
         telefone = Consola.lerInt("Indique o nif do funcionario: ", 000000000, 999999999);
         email = Consola.lerString("Indique a morada do funcionario: ");
-        //dataNascimento = Consola.lerData("Indique a data de nascimento do funcionario: ");
+        dataNascimento = Consola.lerData("Indique a data de nascimento do funcionario: ");
         habilitacoes = Consola.lerString("Indique as habilitações do funcionario: ");
 
 
@@ -80,6 +80,10 @@ public class Gestao {
             errodn = 0;
             try {
                 nif = Consola.lerInt("Indique o nif do funcionario", 000000000, 999999999);
+
+                Funcionario.nif
+
+
                 dataNasc.setTime(formato.parse(dataN));
             } catch (ParseException e) {
                 errodn = 1;
