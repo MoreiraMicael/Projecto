@@ -1,5 +1,6 @@
 package projecto.CP2;
 
+import util.Consola;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -66,11 +67,25 @@ public class Gestao {
         Calendar dataNascimento = new GregorianCalendar();
         int errodn = 0, errode = 0;
 
-        nif = Consola.lerInt("Indique o nif do funcionario: ", 1, 100);
-        nome = Consola.lerString("Indique o nome do aluno: ");
-        morada = Consola.lerString("Indique a morada do aluno: ");
-        nif = Consola.lerInt("Indique o nif do funcionario: ", 1, 100);
-        morada = Consola.lerString("Indique a morada do aluno: ");
+        nif = Consola.lerInt("Indique o nif do funcionario: ", 000000000, 999999999);
+        nome = Consola.lerString("Indique o nome do funcionario: ");
+        morada = Consola.lerString("Indique a morada do funcionario: ");
+        telefone = Consola.lerInt("Indique o nif do funcionario: ", 000000000, 999999999);
+        email = Consola.lerString("Indique a morada do funcionario: ");
+        //dataNascimento = Consola.lerData("Indique a data de nascimento do funcionario: ");
+        habilitacoes = Consola.lerString("Indique as habilitações do funcionario: ");
+
+
+        do {
+            errodn = 0;
+            try {
+                nif = Consola.lerInt("Indique o nif do funcionario", 000000000, 999999999);
+                dataNasc.setTime(formato.parse(dataN));
+            } catch (ParseException e) {
+                errodn = 1;
+                System.err.println("Data de nascimento com formato inválido!");
+            }
+        } while (errodn == 1);
 
         do {
             errodn = 0;
@@ -84,22 +99,14 @@ public class Gestao {
         } while (errodn == 1);
 
         do {
-
-
             System.out.println(grh.mostrarCursos());
-
             numeroC = Consola.lerInt("Indique o número do curso: ", 1, Integer.MAX_VALUE);
-
             pos = grh.pesquisarCurso(numeroC);
-
             if (pos == -1)
                 System.out.println("Curso não existe!");
         }while(pos==-1);
-
         Curso c = grh.obterCurso(pos);
-
         Aluno a = new Aluno(numero, nome, morada, dataNasc, dataEntrada,c);
-
         if (a.validarIdade()) {
             grh.adicionarAluno(a);
             System.out.println("Aluno introduzido com sucesso!");
