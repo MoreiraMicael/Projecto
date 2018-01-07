@@ -2,7 +2,7 @@ package projecto.CP2;
 
 public class TipoEquipamento {
 
-    int numero;
+    int numero, totalEquipamentos;
     String designacao;
     int numeroTotalEquipamentos;
 
@@ -16,6 +16,14 @@ public class TipoEquipamento {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public int getTotalEquipamentos() {
+        return totalEquipamentos;
+    }
+
+    public void setTotalEquipamentos(int totalEquipamentos) {
+        this.totalEquipamentos = totalEquipamentos;
     }
 
     public String getDesignacao() {
