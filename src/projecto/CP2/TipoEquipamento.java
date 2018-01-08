@@ -41,7 +41,7 @@ public class TipoEquipamento implements Serializable{
         return "TipoEquipamento{" +
                 "numero=" + numero +
                 ", designacao='" + designacao + '\'' +
-                ", numeroTotalEquipamentos=" + numeroTotalEquipamentos +
+                ", numeroTotalEquipamentos=" + totalEquipamentos +
                 '}';
     }
 }

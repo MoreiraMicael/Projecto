@@ -153,15 +153,15 @@ public class Equipamento implements Serializable {
 	* Returns value of tipoEqui
 	* @return
 	*/
-	public TipoEquipamento getTipoEqui() {
+	public TipoEquipamento getTipoEquipamento() {
 		return tipoEquipamento;
 	}
 	/**
 	* Sets new value of tipoEqui
 	* @param
 	*/
-	public void setTipoEqui(TipoEquipamento tipoEqui) {
-		this.tipoEquipamento = tipoEqui;
+	public void setTipoEquipamento(TipoEquipamento tipoEquipamento) {
+		this.tipoEquipamento = tipoEquipamento;
 	}
 	/**
 	* Returns value of totalAvariasEquipamento
@@ -206,8 +206,6 @@ public class Equipamento implements Serializable {
 		}
 		return str.toString();
 	}
-
-
 
 	/**
 	* Create string representation of Equipamento for printing

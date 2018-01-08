@@ -4,12 +4,12 @@ import java.io.Serializable;
 import java.util.Calendar;
 
 public class Tecnico extends OutrosFuncionarios implements Serializable{
-    private String login, passworf;
+    private String login, password;
 
     public Tecnico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String funcao, String login, String passworf) {
         super(nif, nome, morada, telefone, email, dataNascimento, habilitacoes, funcao);
         this.login = login;
-        this.passworf = passworf;
+        this.password = password;
     }
 
     public String getLogin() {
@@ -21,11 +21,11 @@ public class Tecnico extends OutrosFuncionarios implements Serializable{
     }
 
     public String getPassworf() {
-        return passworf;
+        return password;
     }
 
     public void setPassworf(String passworf) {
-        this.passworf = passworf;
+        this.password = passworf;
     }
 
     @Override

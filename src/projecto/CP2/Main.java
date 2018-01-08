@@ -1,6 +1,9 @@
 package projecto.CP2;
 
 import util.Consola;
+
+import java.awt.image.TileObserver;
+import java.beans.FeatureDescriptor;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
@@ -8,8 +11,8 @@ import java.util.Scanner;
 public class Main {
 
     private static Gestao gestao = new Gestao();
-
     static Scanner sc = new Scanner(System.in);
+
     static String[] menuPrincipal = {"1 - Gerir Funcionários",
             "2 - Gerir Divisões",
             "3 - Gerir Tipos Equipamentos",
@@ -21,7 +24,7 @@ public class Main {
     static String[] menuAlterarFuncionario = {"1 - Alterar morada", "2 - Alterar numero telefone", "0 - Voltar"};
     static String[] menuDiv = {"1 - Inserir Divisão", "2 - Consultar Divisão", "0 - Voltar"};
     static String[] menuTipo = {"1 - Inserir Tipo Equipamento", "2 - Consultar todos tipos de equipamentos", "0 - Voltar"};
-    static String[] menuEq = {"1 - Inserir Equipamento", "2 - Consultar todos equipamentos", "0 - Voltar"};
+    static String[] menuEq = {"1 - Inserir Equipamento", "2 - Consultar todos equipamentos", "3 - Associar Equipamento a Divisão", "4 - Consultar por Divisão", "0 - Voltar"};
     static String[] menuAv = {"1 - Registar Avaria", "2 - Consultar Avaria", "3 - Alterar estado avaria", "0 - Voltar"};
 
     public static void main(String[] args) {
@@ -30,6 +33,7 @@ public class Main {
         gestao.lerDoFicheiro();
 
         do {
+            System.out.println(gestao.mostrarNumeroDeEquipamentosPorTipo());
             System.out.println("### MENU PRINCIPAL ###");
             mostraMenu(menuPrincipal);
             opcao = lerInteiro("Introduza uma opção: ", 0, 7);
@@ -46,47 +50,23 @@ public class Main {
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalFuncionarios() > 0) {
-                                    System.out.println(gestao.mostrarTodosFuncionarios());
-                                    int nifFuncionario = Consola.lerInt("Insera o nif do Funcionario a que pretende fazer as alteraçoes: ", 000000000, 999999999);
-                                    int j = gestao.pesquisarFuncionario(nifFuncionario);
-                                    do {
-                                        System.out.println("### MENU ALTERAR FUNCIONARIO ###");
-                                        mostraMenu(menuAlterarFuncionario);
-                                        int opcao7 = lerInteiro("Introduza uma opção: ", 0, 2);
-                                        do {
-                                            Funcionario n = gestao.obterFuncionario(j);
-                                            if (j == -1) {
-                                                System.err.println("Não existe nenhum utilizador com esse nif, ou nif introduzido incorrectamente. ");
-                                                switch (opcao7) {
-                                                    case 1:
-                                                        String moradaNova = Consola.lerString("Indique a nova morada do funcionario: ");
-                                                        gestao.alteraMorada(moradaNova, j);
-                                                        break;
-                                                    case 2:
-                                                        int telefoneNovo = Consola.lerInt("Indique o novo telefone do funcionario: ",000000000,999999999);
-                                                        gestao.alteraTelefone(telefoneNovo, j);
-                                                        break;
-                                                    default:
-                                                        break;
-                                                }
-                                            }
-                                        } while (opcao7 != 0);
-                                    }while (j == -1 );
-                                }else System.out.println("Não existem funcionarios Inseridos. ");
+                                    System.out.println(alterarFuncionario());
+                                }else System.out.println("Não existem funcionarios Inseridos.\n ");
                                 break;
                             case 3:
                                 if (gestao.getNumeroTotalFuncionarios() > 0) {
                                     System.out.println(gestao.mostrarTodosFuncionarios());
-                                }else System.out.println("Não existem funcionarios Inseridos. ");
+                                }else System.out.println("Não existem funcionarios Inseridos.\n ");
                                 break;
                             case 4:
                                 if (gestao.getNumeroTotalFuncionarios() > 0) {
                                     removerFuncionario();
-                                }else System.out.println("Não existem funcionarios Inseridos. ");
+                                }else System.out.println("Não existem funcionarios Inseridos.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
-                                System.out.println("A voltar ao menu anterior..");
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
                                 break;
                         }
                     } while (opcao2 != 0);
@@ -96,7 +76,7 @@ public class Main {
                     do {
                         System.out.println("### MENU DIVISÃO ###");
                         mostraMenu(menuDiv);
-                        opcao3 = lerInteiro("Introduza uma opção: ", 0, 2);
+                        opcao3 = lerInteiro("Introduza uma Opção: ", 0, 2);
                         switch (opcao3) {
                             case 1:
                                 inserirDivisao();
@@ -104,11 +84,12 @@ public class Main {
                             case 2:
                                 if (gestao.getNumeroTotalDivisoes() > 0) {
                                     pesquisaDivisao();
-                                }else System.out.println("Não existem divisoes Inseridos. ");
+                                }else System.out.println("Não Existem Divisoes Inseridos.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
-                                System.out.println("A voltar ao menu anterior..");
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
                                 break;
                         }
                     } while (opcao3 != 0);
@@ -118,42 +99,55 @@ public class Main {
                     do {
                         System.out.println("### MENU TIPO EQUIPAMENTO ###");
                         mostraMenu(menuTipo);
-                        opcao4 = lerInteiro("Introduza uma opção: ", 0, 2);
+                        opcao4 = lerInteiro("Introduza uma Opção: ", 0, 2);
                         switch (opcao4) {
                             case 1:
                                 adicionarTipoEquipamento();
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalTipoEquipamento() > 0) {
-                                    System.out.println(gestao.mostrarTipos());
-                                }else System.out.println("Não existem tipos de equipamento Inseridos. ");
+                                    System.out.println(gestao.mostrarTodosEquipamentos());
+                                }else System.out.println("Não Existem Equipamentos Inseridos.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
-                                System.out.println("A voltar ao menu anterior..");
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
                                 break;
                         }
                     } while (opcao4 != 0);
                     break;
-
                     case 4:
                     int opcao5 = 0;
                     do {
                         System.out.println("### MENU EQUIPAMENTO ###");
                         mostraMenu(menuEq);
-                        opcao5 = lerInteiro("Introduza uma opção: ", 0, 2);
+                        opcao5 = lerInteiro("Introduza uma opção: ", 0, 4);
                         switch (opcao5) {
                             case 1:
-                                inserirEquipamento();
+                                if (gestao.getNumeroTotalTipoEquipamento() > 0) {
+                                    inserirEquipamento();
+                                }else System.out.println("Precissa de criar um tipo de equipamento antes de criar um equipamento.\n ");
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalTipoEquipamento() > 0) {
                                     System.out.println(gestao.mostrarTodosEquipamentos());
-                                }else System.out.println("Não existem equipamentos Inseridos. ");
+                                }else System.out.println("Não existem equipamentos Inseridos.\n ");
+                                break;
+                            case 3:
+                                if (gestao.getNumeroTotalTipoEquipamento() > 0) {
+                                    associarEquipamentoDivisao();
+                                }else System.out.println("Não existem equipamentos Inseridos.\n ");
+                                break;
+                            case 4:
+                                if (gestao.getNumeroTotalTipoEquipamento() > 0) {
+                                    consultarEquipamentosPorDivisao();
+                                }else System.out.println("Não existem equipamentos Inseridos.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
-                                System.out.println("A voltar ao menu anterior..");
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A voltar ao menu anterior..\n");
                                 break;
                         }
                     } while (opcao5 != 0);
@@ -166,21 +160,24 @@ public class Main {
                         opcao6 = lerInteiro("Introduza uma opção: ", 0, 3);
                         switch (opcao6) {
                             case 1:
-                                criarAvaria();
+                                if (gestao.getNumeroTotalEquipamentos() > 0) {
+                                    criarAvaria();
+                                }else System.err.println("Não existem Avarias Inseridas.\n ");
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalAvarias() > 0) {
                                     pesquisarAvaria();
-                                }else System.out.println("Não existem Avarias Inseridos. ");
+                                }else System.err.println("Não existem Avarias Inseridas.\n ");
                                 break;
                             case 3:
                                 if (gestao.getNumeroTotalAvarias() > 0) {
                                     alterarEstadoAvaria();
-                                }else System.out.println("Não existem Avarias Inseridos. ");
+                                }else System.err.println("Não existem Avarias Inseridas.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
-                                System.out.println("A voltar ao menu anterior..");
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A voltar ao menu anterior..\n");
                                 break;
                         }
                     } while (opcao6 != 0);
@@ -192,9 +189,7 @@ public class Main {
                     System.out.println("Opção inválida...");
             }
         } while (opcao != 0);
-
         gestao.gravarParaFicheiro();
-
     }
 
     static void mostraMenu(String[] opcoes) {
@@ -215,11 +210,9 @@ public class Main {
     //////////////////////////////////////////////FUNCIONARIO
     public static void inserirFuncionario() {
         int nifFuncionario, telefone, j, menuTipoFuncionario;
-        int errodn = 0;
         String nome, morada, habilitacoes, email, especialidade, seccao, funcao, login, password;
         Calendar dataNascimento = new GregorianCalendar();
         Funcionario funcionario;
-
         do {
             nifFuncionario = Consola.lerInt("Indique o nif do funcionario: ", 000000000, 999999999);
             j = gestao.pesquisarFuncionario(nifFuncionario);
@@ -232,53 +225,39 @@ public class Main {
                 email = Consola.lerString("Indique o email do funcionario: ");
                 dataNascimento = Consola.lerData("Indique a data de nascimento do funcionario: ");
                 habilitacoes = Consola.lerString("Indique as habilitações do funcionario: ");
-
                 do {
-
                     System.out.println("Indique qual a função do Funcionario que pretende inserir: ");
                     System.out.println("1 - Médico ");
                     System.out.println("2 - Tecnico ");
                     System.out.println("3 - Outro ");
-
                     menuTipoFuncionario = Consola.lerInt("Opção: ", 1, 3);
-
                 }while (menuTipoFuncionario < 1 && menuTipoFuncionario > 3 );
-
                 if (menuTipoFuncionario == 1) {
                     especialidade = Consola.lerString("Qual a especialidade do médico? ");
                     seccao = Consola.lerString("Qual a secção de trabalho do médico? ");
-
                     funcionario = new Medico(nifFuncionario, nome, email, telefone, morada, dataNascimento, habilitacoes, especialidade, seccao);
-
                     if (funcionario.maiorIdade()) {
                         gestao.adicionarFuncionario(funcionario);
                         funcionario.setNumeroTotalFuncionarios(funcionario.getNumeroTotalFuncionarios()+ 1);
                     } else {
                         System.err.println("O funcionario que introduziu não é maior de idade ");
                     }
-
                 }
                 if (menuTipoFuncionario == 2) {
                     funcao = "Tecnico";
                     login = Consola.lerString("Insira o nome de login para o Tecnico: ");
                     password = Consola.lerString("Insira a password para o Tecnico: ");
-
                     funcionario = new Tecnico(nifFuncionario, nome, morada, telefone, email, dataNascimento, funcao, habilitacoes, login, password);
-
                     if (funcionario.maiorIdade()) {
                         gestao.adicionarFuncionario(funcionario);
                         funcionario.setNumeroTotalFuncionarios(funcionario.getNumeroTotalFuncionarios()+ 1);
                     } else {
                         System.err.println("O funcionario que introduziu não é maior de idade ");
                     }
-
                 }
                 if (menuTipoFuncionario == 3) {
-
                     funcao = Consola.lerString("Qual a função do funcionário? ");
-
                     funcionario = new OutrosFuncionarios(nifFuncionario, nome, morada, telefone, email, dataNascimento, habilitacoes, funcao);
-
                     if (funcionario.maiorIdade()) {
                         gestao.adicionarFuncionario(funcionario);
                         funcionario.setNumeroTotalFuncionarios(funcionario.getNumeroTotalFuncionarios()+ 1);
@@ -288,56 +267,44 @@ public class Main {
                 }
             }
         }while (j != -1);
-
     }
-/*
-    private static void alteraFuncionario() {
 
-        Funcionario funcionario, n;
-        int j, telefoneNovo;
-        String moradaNova;
-
+    public static Funcionario alterarFuncionario() {
+        int nif, pos, telefone;
+        Funcionario f;
+        String morada;
+        int opcao = 0;
         System.out.println(gestao.mostrarTodosFuncionarios());
-        int nifFuncionario = Consola.lerInt("Insera o nif do Funcionario a que pretende fazer as alteraçoes: ",000000000,999999999);
-        j = gestao.pesquisarFuncionario(nifFuncionario);
-
-        do {
-
-            n = gestao.obterFuncionario(j);
-            if (j == -1){
-                System.err.println("Não existe nenhum utilizador com esse nif, ou nif introduzido incorrectamente. ");
-            }else {
-                System.out.println("Alterar Dados Funcionario\n");
-                System.out.println("\t0. Sair");
-                System.out.println("\t1. Alterar Morada");
-                System.out.println("\t2. Alterar Telefone");
-                System.out.println("\nOpcao: ");
-
-                int opcao;
-                Scanner numero = new Scanner(System.in);
-                do {
-                    opcao = numero.nextInt();
-                    switch (opcao) {
-                        case 1:
-                            moradaNova = Consola.lerString("Indique a nova morada do funcionario: ");
-                            //gestao.alteraMorada(moradaNova, j);
-                            n.setMorada(moradaNova);
-
-                            break;
-                        case 2:
-                            telefoneNovo = Consola.lerInt("Indique o novo telefone do funcionario: ",000000000,999999999);
-                            //gestao.alteraTelefone(telefoneNovo, j);
-                            n.setTelefone(telefoneNovo);
-                            break;
-                        default:
-                            System.out.println("Opção inválida.");
-                            break;
-                    }
-                } while (opcao != 0);
-            }
-        }while (j == -1);
+        nif = Consola.lerInt("Indique o Nif do funcionario: ", 000000000, 999999999);
+        pos = gestao.pesquisarFuncionario(nif);
+        f = gestao.obterFuncionario(pos);
+        if (pos == -1) {
+            System.err.println("Não existe nenhum utilizador com esse nif, ou nif introduzido incorrectamente. ");
+        } else {
+            do {
+                System.out.println("### MENU ALTERAR FUNCIONARIO ###");
+                mostraMenu(menuAlterarFuncionario);
+                opcao = lerInteiro("Introduza uma opção: ", 0, 2);
+                switch (opcao) {
+                    case 1:
+                        morada = Consola.lerString("Indique a nova morada do funcionario: ");
+                        f.setMorada(morada);
+                        f =  new Funcionario(nif,f.nome,morada,f.telefone,f.email,f.dataNascimento,f.habilitacoes);
+                        break;
+                    case 2:
+                        telefone = Consola.lerInt("Indique o novo numero de telefone do funcionario: ", 000000000, 999999999);
+                        f.setTelefone(telefone);
+                        f =  new Funcionario(nif,f.nome,f.morada,telefone,f.email,f.dataNascimento,f.habilitacoes);
+                        break;
+                    default:
+                        System.out.println("Opção inválida.");
+                        break;
+                }
+            } while (pos == -1);
+        }
+        return f;
     }
-*/
+
     public static void removerFuncionario() {
         int nifFuncionario, j;
         do {
@@ -352,15 +319,10 @@ public class Main {
                 System.err.println("O funcionario com esse nif não existe ou ja foi eliminado");
             }
         } while (j == -1);
-
-        //System.err.println("O funcionario com esse nif não existe ou ja foi eliminado");
-        //System.out.println("Funcionário removido com sucesso!");
+        System.out.println("Funcionário removido com sucesso!");
     }
-
 ///////////////////////////////////////////////EQUIPAMENTO
-
     public static void inserirEquipamento(){
-
         int numeroIventario,numeroSerie, nifFuncionario, numeroTipo, j;
         String descricao;
         float custo;
@@ -369,128 +331,93 @@ public class Main {
         TipoEquipamento tipoEquipamento;
         Funcionario funcionario;
         Tecnico tecnico;
-
         do {
-            nifFuncionario = Consola.lerInt("Insira o nif do Funcionario:", 000000000,999999999);
+            nifFuncionario = Consola.lerInt("Insira o nif do Funcionario: ", 000000000,999999999);
             j = gestao.pesquisarFuncionario(nifFuncionario);
             if (j == -1)
                 System.err.println("não existem nenhum funcionario com esse nif. ");
             else{
                 funcionario = gestao.obterFuncionario(j);
-
                 if (funcionario instanceof Tecnico) {
                     tecnico = (Tecnico) funcionario;
-
                     do {
-                        numeroIventario = Consola.lerInt("Indique o numero de inventário:", 1, Integer.MAX_VALUE);
+                        numeroIventario = Consola.lerInt("Indique o numero de inventário: ", 000000000, 999999999);
                         j = gestao.pesquisarEquipamento(numeroIventario);
                         if (j != -1)
-                            System.err.println("Já existe um equipamento com esse número");
+                            System.err.println("Já existe um equipamento com esse número. ");
                     } while (j != -1); //repete se ja existir número
-
                     descricao = Consola.lerString("Descricao do equipamento: ");
-                    numeroSerie = Consola.lerInt("Indique o numero de Serie:", 000000000, 999999999);
+                    numeroSerie = Consola.lerInt("Indique o numero de Serie: ", 000000000, 999999999);
                     custo = Consola.lerFloat("Indique qual o custo do equipamento: ", 000000000, 999999999);
-
                     System.out.println(gestao.mostrarTipos());
                     do {
-
                         numeroTipo = Consola.lerInt("Numero do Tipo de Equipamento: ", 000000000, 999999999);
                         j = gestao.pesquisaTipo(numeroTipo);
-
                         if (j == -1) {
-                            System.out.println("[AVISO] Tipo de equipamento nao encontrado! coloque uma da Listagem anterior.");
+                            System.out.println("Tipo de equipamento nao encontrado. ");
                         }
                     } while (j == -1);
-
                     tipoEquipamento = new TipoEquipamento(descricao);
-
                     //tipoEquipamento = gestao.obterTipo(j);
-
                     equipamento = new Equipamento(descricao, numeroIventario, numeroSerie, custo, dataIventario, tipoEquipamento, tecnico);
-
                     tipoEquipamento.setTotalEquipamentos(tipoEquipamento.getTotalEquipamentos() + 1);
-
                     gestao.adicionarEquipamento(equipamento);
-
-                    System.out.println("Equipamento criado com sucesso!");
+                    System.out.println("Equipamento criado com sucesso! ");
                 }else{
                     //j=-1;
-                    System.err.println("Esse Funcionário não é tecnico");
+                    System.err.println("Esse Funcionário não é tecnico ");
                 }
             }
         } while (j == -1); //repete se ja existir número
     }
 
-
-    public void registarEquipamento() {
-
-        int numeroSerie, numeroIventario, nifTecnico, j, numeroTipoEquipamento;
-        String descricao, estado;
-        float custo;
-        Calendar dataIventario = Calendar.getInstance();
-        TipoEquipamento tipoEquipamento;
+    private static void associarEquipamentoDivisao() {
+        int j, numeroIventario;
+        String designacao;
         Divisao divisao;
-        Funcionario funcionario;
-        Tecnico tecnico=null;
         Equipamento equipamento;
-        int totalAvariasEquipamento;
-        int errodn = 0, errode = 0;
 
+        System.out.println(gestao.mostrarDesignacaoDivisoes());
         do {
-            nifTecnico = Consola.lerInt("Indique o nif do técnico:", 1,999999999);
-            j = gestao.pesquisarFuncionario(nifTecnico);
-            if (j==-1)
-                System.err.println("Não existe nenhum técnico com esse nif. ");
-            else{
-                funcionario = gestao.obterFuncionario(j);
-
-                if (funcionario instanceof Tecnico)
-                    tecnico=(Tecnico) funcionario;
-                else{
-                    j=-1;
-                    System.err.println("Não existe nenhum técnico com esse nif. ");
-                }
-
-            }
-        } while (j == -1);
-        //existe tecnico com esse nif
-
-        do {
-            numeroIventario = Consola.lerInt("Indique o numero de inventário do equipamento: ", 1,999999999);
-            j = gestao.pesquisarEquipamento(numeroIventario);
-                if (j != -1)
-                    System.err.println("Numero de inventario já foi utilizado");
-        } while (j != -1);
-        //repete
-
-        numeroSerie = Consola.lerInt("Indique o numero de serie do equipamento: ", 000000000, 999999999);
-        descricao = Consola.lerString("Indique a descricao do equipamento: ");
-        custo = Consola.lerFloat("Indique qual o custo do equipamento: ", 000000000,999999999);
-
-        //System.out.println("------------------ LISTAGEM TIPOS DE EQUIPAMENTO ------------------");
-        //System.out.println(gestao.mostrarTipos());
-        //System.out.println("------------------ FIM LISTAGEM ------------------");
-        do {
-
-            numeroTipoEquipamento = Consola.lerInt("Insira o Numero do Tipo de Equipamento: ", 0 , 999999999);
-            j = gestao.pesquisaTipo(numeroTipoEquipamento);
+            designacao = Consola.lerString("Insira a Designacao da Divisao que pretende associar o Equipamento: ");
+            j = gestao.procurarDesignacaoNasDivisoes(designacao);
 
             if(j == -1){
-                System.out.println("Tipo de equipamento nao encontrado! ");
+                System.out.println("Divisao nao encontrada.\n");
             }
         }while (j == -1);
 
-        tipoEquipamento = gestao.obterTipo(j);
+        divisao = gestao.obterDivisao(j);
+        System.out.println(gestao.mostrarTodosEquipamentos());
+        do {
+            numeroIventario = Consola.lerInt("Numero de Inventario do equipamento que pretende associar: ", 000000000, 999999999);
+            j = gestao.pesquisarEquipamento(numeroIventario);
 
-        equipamento = new Equipamento(descricao, numeroIventario, numeroSerie, custo, dataIventario, tipoEquipamento, tecnico);
+            if(j == -1){
+                System.out.println("Equipamento não encontrado.\n");
+            }
+        }while (j == -1);
 
+        equipamento = gestao.obterEquipamento(j);
+        equipamento.setDivisao(divisao);
+        divisao.adicionarEquipamentoDivisao(equipamento);
+        System.out.println("Equipamento associado com sucesso.\n");
+    }
 
-        tipoEquipamento.setTotalEquipamentos(tipoEquipamento.getTotalEquipamentos()+1);
-
-        gestao.adicionarEquipamento(equipamento);
-
-        System.out.println("Equipamento adicionado com sucesso!");
+    private static void consultarEquipamentosPorDivisao(){
+        int j;
+        String designacao;
+        Divisao divisao;
+        System.out.println(gestao.mostrarDesignacaoDivisoes());
+        do {
+            designacao = Consola.lerString("Designacao da divisao a consultar: ");
+            j = gestao.procurarDesignacaoNasDivisoes(designacao);
+            if(j == -1){
+                System.out.println("Divisao nao encontrada.\n");
+            }
+        }while (j == -1);
+        divisao = gestao.obterDivisao(j);
+        System.out.println(divisao.mostrarEquipamentosDivisao());
     }
 
     //////////////////////////////////////////////TIPOEQUIPAMENTO
@@ -498,17 +425,13 @@ public class Main {
     public static void adicionarTipoEquipamento( ) {
         String designacao;
         TipoEquipamento tipoEquipamento;
-
         designacao = Consola.lerString("Indique qual a designação do Tipo de Equipamento: ");
         tipoEquipamento = new TipoEquipamento(designacao);
-
         gestao.adicionarTipoEquipamento(tipoEquipamento);
-        System.out.println("Tipo de Equipamento Inserido com Sucesso!");
+        System.out.println("Tipo de Equipamento Inserido\n");
     }
 
-
     //////////////////////////////////////////////DIVISAO
-
     private static void inserirDivisao() {
         //int equipamentosInstalados = Divisao.getEquipamentosInstalados();
         int equipamentosInstalados = 0;
@@ -516,15 +439,12 @@ public class Main {
         Divisao divisao;
         String localizacao;
         int errodn , errode = 0;
-
         do {
             String designacao = Consola.lerString("Indique a designação da divisão: ");
             j = gestao.procurarDesignacaoNasDivisoes(designacao);
-
             if (j == -1){
                 //perguntar se existem equipamentos já na sala  //equipamentosInstalados = Consola.lerInt("Quantos equipamentos ja existem na sala : ", 000000000, 999999999);
                 localizacao = Consola.lerString("Indique a localizacao da Divisão: ");
-
                 divisao = new Divisao(designacao, localizacao, equipamentosInstalados);
                 gestao.inserirDivisao(divisao);
             }
@@ -532,46 +452,23 @@ public class Main {
                 System.out.println("já existe uma divião com esta designação");
             }
         }while (j != -1);
-
-
     }
-
 
     //Pesquisa por campo unico: designacao
     private static void pesquisaDivisao() {
         int j;
         String designacao;
         Divisao divisao;
-
         do {
+            System.out.println(gestao.mostrarTodasDivisoes());
             designacao = Consola.lerString("Indique a designação da divisão: ");
             j = gestao.procurarDesignacaoNasDivisoes(designacao);
-                if (j == -1){
+                if (j != -1)
                     System.err.println("Não existe nenhuma divisão com essa designação.  ");
-                }
-        }while (j != -1);
-
-        divisao = gestao.obterDivisao(j);
-        System.out.println(divisao);
-
+        }while (j == -1);
+            divisao = gestao.obterDivisao(j);
+            System.out.println(divisao);
     }
-
-
-
-    //Pesquisa por campo unico: designacao da Divisao
-    /*public int pesquisaDivisaoDesignacao( ) {
-        Divisao di
-        for (int i = 0; i < divisoes.size(); i++) {
-            if (divisoes.get(i).getDesignacao() == designcao) {
-                System.out.println("" + divisoes.get(i));
-                return i;
-            }
-        }
-        System.out.println("Nenhuma divisao com essa designacao encontrada. ");
-        return -1;
-    }*/
-
-
 
     //////////////////////////////////////////////AVARIA
     public static void criarAvaria() {
@@ -580,7 +477,6 @@ public class Main {
         Equipamento equipamento;
         Funcionario funcionario;
         Avaria avaria;
-
         do {
             System.out.println(gestao.mostrarTodosEquipamentos());
             numeroInventario = Consola.lerInt("Insira o numero de inventario do equipamento avariado: ", 000000000, 999999999);
@@ -589,18 +485,15 @@ public class Main {
                 System.out.println("Nenhum equipamento encontrado com esse numero de inventario. ");
             }
         }while (j == -1) ;
-
         equipamento = gestao.obterEquipamento(j);
         descricao = Consola.lerString("Insira a descricao da avaria: ");
         System.out.println("Avaria inserida com Sucesso!");
-
         do {
             nifFuncionario = Consola.lerInt("Insira o nif do funcionário:", 000000000, 999999999);
             n = gestao.pesquisarFuncionario(nifFuncionario);
             if (n == -1)
                 System.err.println("Numero incorrecto ou não existe nehum funcionario com esse numero");
         } while (n == -1);
-
         funcionario = gestao.obterFuncionario(j);
         avaria = new Avaria(equipamento, descricao, funcionario);
         equipamento.adicioarAvariaEquipamento(avaria);
@@ -618,7 +511,6 @@ public class Main {
         Funcionario funcionario;
         Funcionario tecnico;
         Reparacao reparacao;
-
         do {
             System.out.println(gestao.mostrarTodasAvarias());
             idAvaria = Consola.lerInt("Indique qual o id da Avaria a que pretende mudar o estado: ", 000000000, 999999999);
@@ -627,24 +519,18 @@ public class Main {
                 System.out.println("Nenhuma avaria encontrada com o id introduzido. ");
             }
         }while (j == -1);
-
         avaria = gestao.obterAvaria(j);
-
         do {
             opcao = Consola.lerInt("Opção: ", 1, 2);
             System.out.println("Para que estado pretende alterar o estado do equipamento ?\n ");
             System.out.println("1- Reparado ");
             System.out.println("2- Irreparavél - abater ");
-
         } while (opcao !=1 && opcao != 2);
-
         if (opcao == 1) {
             avaria.getEquipamentoAssociado().setEstadoEquipamento(ESTADOEQUIPAMENTO.disponivel);
-
             dataReparacao = Consola.lerData("Insira a data em que a reparacao foi realizada (dd-mm-yyyy): ");
             descricao = Consola.lerString("Insira a descrição da reparação: ");
             custo = Consola.lerFloat("Insira o custo da reparação: ", 000000000, 999999999);
-
             do {
                 System.out.println(gestao.mostrarTodosFuncionarios());
                 nifFuncionario = Consola.lerInt("Insira o nif do técnico que realizou a reparação: ", 000000000,999999999);
@@ -653,7 +539,6 @@ public class Main {
                     System.err.println("Numero nif encorrecto ou não existe nehum funcionario com esse nif. ");
                 else {
                     funcionario = gestao.obterFuncionario(j);
-
                     if (funcionario instanceof Tecnico)
                         tecnico = funcionario;
                     else {
@@ -662,11 +547,8 @@ public class Main {
                     }
                 }
             } while (j == -1);
-
             tecnico = gestao.obterFuncionario(j);
-
             reparacao = new Reparacao(avaria, dataReparacao, descricao, custo, tecnico);
-
             avaria.getEquipamentoAssociado().adicioarReparacao(reparacao);
             reparacao.getAvaria().setEstadoAvaria(ESTADOAVARIA.reparado);
             gestao.adicionarReparacao(reparacao);
@@ -676,11 +558,9 @@ public class Main {
             avaria.getEquipamentoAssociado().setEstadoEquipamento(ESTADOEQUIPAMENTO.abatido);
             avaria.getEquipamentoAssociado().getDivisao().eliminarEquipamentoDivisao(avaria.getEquipamentoAssociado());
             //avaria.getEquipamentoAssociado().setDivisao(null);
-
             dataReparacao = Consola.lerData("Insira a data em que a reparacao foi realizada (dd-mm-yyyy): ");
             descricao = Consola.lerString("Insira a descrição da reparação: ");
             custo = Consola.lerFloat("Insira o custo da reparação: ", 000000000, 999999999);
-
             do {
                 nifFuncionario = Consola.lerInt("Insira o nif do técnico que realizou a reparação: ", 000000000,999999999);
                 j = gestao.pesquisarFuncionario(nifFuncionario);
@@ -688,7 +568,6 @@ public class Main {
                     System.err.println("Numero nif encorrecto ou não existe nehum funcionario com esse nif. ");
                 else {
                     funcionario = gestao.obterFuncionario(j);
-
                     if (funcionario instanceof Tecnico)
                         tecnico = funcionario;
                     else {
@@ -697,11 +576,8 @@ public class Main {
                     }
                 }
             } while (j == -1);
-
             tecnico = gestao.obterFuncionario(j);
-
             reparacao = new Reparacao(avaria, dataReparacao, descricao, custo, tecnico);
-
             avaria.getEquipamentoAssociado().adicioarReparacao(reparacao);
             reparacao.getAvaria().setEstadoAvaria(ESTADOAVARIA.irreparavel);
             gestao.adicionarReparacao(reparacao);
@@ -712,17 +588,13 @@ public class Main {
     private static void pesquisarAvaria() {
         int numeroEquipamento, j;
         Equipamento equipamento;
-
         do {
-
             numeroEquipamento = Consola.lerInt("Número de Inventario do equipamento que pretende consultar: ", 000000000, 999999999);
             j = gestao.pesquisarEquipamento(numeroEquipamento);
-
             if(j == -1){
                 System.out.println("Equipamento não encontrado!");
             }
         }while (j == -1);
-
         equipamento = gestao.obterEquipamento(j);
         System.out.println(equipamento.mostrarAvariasEquipamento());
         //System.out.println(equipamento.mostrarReparacoes());

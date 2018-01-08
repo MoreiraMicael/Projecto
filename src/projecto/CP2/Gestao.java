@@ -24,6 +24,7 @@ public class Gestao {
 
     public void adicionarTipoEquipamento (TipoEquipamento tipo){
         tipo.setNumero(tiposEquipamento.size() + 1);
+        tipo.setTotalEquipamentos(tiposEquipamento.size() + 1);
         tiposEquipamento.add(tipo);
     }
 
@@ -97,13 +98,17 @@ public class Gestao {
         }
         return str.toString();
     }
-
+/*
     public void alteraMorada (String novaMorada, int nifFuncionario) {
         for (int i = 0; i < funcionarios.size(); i++){
             if (funcionarios.get(i).getNifFuncionario() == nifFuncionario) {
                 funcionarios.get(i).setMorada(novaMorada);
             }
         }
+    }
+
+    public void alteraMorada (String novaMorada, Funcionario funcionario) {
+        funcionario.setMorada(novaMorada);
     }
 
     public void alteraTelefone (int novoTelefone, int nifFuncionario) {
@@ -113,7 +118,7 @@ public class Gestao {
             }
         }
     }
-
+*/
     /////////////////////////////////////////////EQUIPAMENTO
 
     public void adicionarEquipamento(Equipamento equipamento) {
@@ -163,6 +168,14 @@ public class Gestao {
         return divisoes.size();
     }
 
+    public String mostrarTodasDivisoes() {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < divisoes.size(); i++) {
+            str.append(divisoes.get(i)).append("\n");
+        }
+        return str.toString();
+    }
+
     public int procurarDesignacaoNasDivisoes(String designacao){
         for (int i = 0; i < divisoes.size(); i++){
             if (divisoes.get(i).getDesignacao().equalsIgnoreCase(designacao)){
@@ -170,6 +183,14 @@ public class Gestao {
             }
         }
         return  -1;
+    }
+
+    public String mostrarDesignacaoDivisoes() {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < divisoes.size(); i++) {
+            str.append(divisoes.get(i).getDesignacao()).append("\n");
+        }
+        return str.toString();
     }
     //////////////////////////////////////////////AVARIA
     public void criarAvaria(Avaria avaria){
@@ -207,6 +228,7 @@ public class Gestao {
         reparacao.setIdReparacao(reparacoes.size() + 1);
         reparacoes.add(reparacao);
     }
+
     public int getNumReparacoes() {
         return reparacoes.size();
     }
@@ -223,6 +245,7 @@ public class Gestao {
         }
         return -1;
     }
+
     public String mostrarReparacoes() {
         StringBuilder str = new StringBuilder();
 
@@ -231,6 +254,7 @@ public class Gestao {
         }
         return str.toString();
     }
+
     public Reparacao obterReparacao(int pos){
         return reparacoes.get(pos);
     }
@@ -271,7 +295,7 @@ public class Gestao {
             avarias = (ArrayList<Avaria>)inputDados.readObject();
             reparacoes = (ArrayList<Reparacao>)inputDados.readObject();
 
-            //System.out.println("Tipos equipamentos: "+ (ArrayList<TipoEquipamento>) inputDados.readObject());
+            /*//System.out.println("Tipos equipamentos: "+ (ArrayList<TipoEquipamento>) inputDados.readObject());
             System.out.println("Tipos equipamentos: "+ tiposEquipamento);
             //System.out.println("Funcionario: "+ (ArrayList<Funcionario>) inputDados.readObject());
             System.out.println("Funcionario: "+ funcionarios);
@@ -284,12 +308,21 @@ public class Gestao {
             //System.out.println("Reparacao: "+ (ArrayList<Reparacao>) inputDados.readObject());
             System.out.println("Reparacao: "+ reparacoes);
 
-            //Fecha Ficheiro
+            *///Fecha Ficheiro
             inputDados.close();
 
         }catch (Exception ex){
             ex.printStackTrace();
             //System.out.println(e.getMessage());
         }
+    }
+
+    public String mostrarNumeroDeEquipamentosPorTipo(){
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < equipamentos.size(); i++){
+            System.out.println("Equipamentos: " + tiposEquipamento.get(i).getTotalEquipamentos());
+            str.append(equipamentos.get(i).getTipoEquipamento());
+        }
+        return str.toString();
     }
 }
