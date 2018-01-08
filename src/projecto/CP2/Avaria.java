@@ -1,8 +1,9 @@
 package projecto.CP2;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Avaria {
+public class Avaria implements Serializable {
     private int idAvaria;
     private Calendar dataRegisto = Calendar.getInstance();
     private Equipamento equipamentoAssociado;

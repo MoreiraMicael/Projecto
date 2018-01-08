@@ -1,6 +1,8 @@
 package projecto.CP2;
 
-public class TipoEquipamento {
+import java.io.Serializable;
+
+public class TipoEquipamento implements Serializable{
 
     int numero, totalEquipamentos;
     String designacao;

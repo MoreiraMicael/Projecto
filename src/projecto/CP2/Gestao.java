@@ -2,11 +2,21 @@ package projecto.CP2;
 
 import util.Consola;
 
+import javax.naming.Context;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.lang.management.ThreadInfo;
 import java.util.ArrayList;
+/*
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
-
+*/
 public class Gestao {
     private ArrayList<TipoEquipamento> tiposEquipamento = new ArrayList<>();
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
@@ -14,7 +24,6 @@ public class Gestao {
     private ArrayList<Equipamento> equipamentos = new ArrayList<>();
     private ArrayList<Avaria> avarias = new ArrayList<>();
     private ArrayList<Reparacao> reparacoes = new ArrayList<>();
-
 
     /////////////////////////////////////////////TipoEquipamento
 
@@ -53,10 +62,14 @@ public class Gestao {
 
     /////////////////////////////////////////////Funcionarios
 
-    //MostrarUmFuncionario
+    public void adicionarFuncionario(Funcionario funcionario) {
+        funcionarios.add(funcionario);
+    }
+
+    //Pesquisar Funcionario por nif
     public int pesquisarFuncionario(int nif){
         for (int i = 0; i < funcionarios.size(); i++){
-            if (funcionarios.get(i).getNif() == nif){
+            if (funcionarios.get(i).getNifFuncionario() == nif){
                 return i;
             }
         }
@@ -77,22 +90,38 @@ public class Gestao {
     }
 
     //RemoveFuncionario
-    public boolean removerFuncionario() {
-        int nif = 0;
-        int pos = -1;
-        for (int i = 0; i < funcionarios.size(); i++) {
-            if (funcionarios.get(i).getNif() == nif) {
-                pos = i;
+    public void removerFuncionario(int nifFuncionario) {
+        funcionarios.remove(nifFuncionario);
+    }
+
+    public void alteraMorada (int nifFuncionario, String novaMorada) {
+        for (int i = 0; i < funcionarios.size(); i++){
+            if (funcionarios.get(i).getNifFuncionario() == nifFuncionario) {
+                funcionarios.get(i).setMorada(novaMorada);
             }
-        }
-        if (pos == -1){
-            return false;}
-        else{
-            funcionarios.remove(pos);
-            return true;
         }
     }
 
+    public void alteraTelefone (int nifFuncionario, int novoTelefone) {
+        for (int i = 0; i < funcionarios.size(); i++){
+            if (funcionarios.get(i).getNifFuncionario() == nifFuncionario) {
+                funcionarios.get(i).setTelefone(novoTelefone);
+            }
+        }
+    }
+
+    /*private void alteraTelefone() {
+        int nif = Consola.lerInt("Indique o nif do funcionário: ", 1, 999999999);
+
+        for (int i = 0; i < funcionarios.size(); i++) {
+            if (funcionarios.get(i).getNif() == nif) {
+                int telefone = Consola.lerInt("Indique o telefone:", 1, 999999999);
+                funcionarios.get(i).setTelefone(telefone);
+            } else {
+                System.out.println("Funcionario não existe. ");
+            }
+        }
+    }*/
     /////////////////////////////////////////////EQUIPAMENTO
 
     public void adicionarEquipamento(Equipamento equipamento) {
@@ -128,6 +157,10 @@ public class Gestao {
     //////////////////////////////////////////////DIVISAO
     public void inserirDivisao(Divisao divisao) {
         this.divisoes.add(divisao);
+    }
+
+    public Divisao obterDivisao(int pos){
+        return divisoes.get(pos);
     }
 
     public int procurarDesignacaoNasDivisoes(String designacao){
@@ -192,5 +225,61 @@ public class Gestao {
     }
     public Reparacao obterReparacao(int pos){
         return reparacoes.get(pos);
+    }
+
+    public void gravarParaFicheiro(){
+        try {
+        //Cria Ficheiro
+        FileOutputStream output = new FileOutputStream("C:\\Users\\Moreira\\IdeaProjects\\Projecto\\dados.txt");
+        ObjectOutputStream outputDados = new ObjectOutputStream(output);
+
+            //Escreve no Ficheiro
+            outputDados.writeObject(tiposEquipamento);
+            outputDados.writeObject(funcionarios);
+            outputDados.writeObject(divisoes);
+            outputDados.writeObject(equipamentos);
+            outputDados.writeObject(avarias);
+            outputDados.writeObject(reparacoes);
+            //Fecha Ficheiro
+            outputDados.close();
+
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            //System.out.println(ex.getMessage());
+        }
+    }
+
+    public void lerDoFicheiro(){
+        try {
+            //Lêr ficheiro e escreve na consola
+            ObjectInputStream inputDados = new ObjectInputStream(new FileInputStream("C:\\Users\\Moreira\\IdeaProjects\\Projecto\\dados.txt"));
+
+            tiposEquipamento = (ArrayList<TipoEquipamento>)inputDados.readObject();
+            funcionarios = (ArrayList<Funcionario>)inputDados.readObject();
+            divisoes = (ArrayList<Divisao>)inputDados.readObject();
+            equipamentos = (ArrayList<Equipamento>)inputDados.readObject();
+            avarias = (ArrayList<Avaria>)inputDados.readObject();
+            reparacoes = (ArrayList<Reparacao>)inputDados.readObject();
+
+            //System.out.println("Tipos equipamentos: "+ (ArrayList<TipoEquipamento>) inputDados.readObject());
+            System.out.println("Tipos equipamentos: "+ tiposEquipamento);
+            //System.out.println("Funcionario: "+ (ArrayList<Funcionario>) inputDados.readObject());
+            System.out.println("Funcionario: "+ funcionarios);
+            //System.out.println("Divisao: "+ (ArrayList<Divisao>) inputDados.readObject());
+            System.out.println("Divisao: "+ divisoes);
+            //System.out.println("Equipamento: "+ (ArrayList<Equipamento>) inputDados.readObject());
+            System.out.println("Equipamento: "+ equipamentos);
+            //System.out.println("Avaria: "+ (ArrayList<Avaria>) inputDados.readObject());
+            System.out.println("Avaria: "+ avarias);
+            //System.out.println("Reparacao: "+ (ArrayList<Reparacao>) inputDados.readObject());
+            System.out.println("Reparacao: "+ reparacoes);
+
+            //Fecha Ficheiro
+            //inputDados.close();
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+            //System.out.println(e.getMessage());
+        }
     }
 }

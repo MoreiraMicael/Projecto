@@ -1,9 +1,10 @@
 package projecto.CP2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Equipamento {
+public class Equipamento implements Serializable {
   private String descricao;
   private int numeroIventario, numeroSerie, totalAvariasEquipamento;
   private float custo;
