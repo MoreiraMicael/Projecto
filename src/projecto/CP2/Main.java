@@ -17,11 +17,12 @@ public class Main {
             "5 - Gerir Avarias",
             "0 - Sair"};
 
-    static String[] menuFunc = {"1- Inserir Funcionário", "2- Alterar Funcionário", "3- Consultar todos Funcionários", "4- Eliminar Funcionários", "0-Voltar"};
-    static String[] menuDiv = {"1- Inserir Divisão", "2- Consultar Divisão", "0- Voltar"};
-    static String[] menuTipo = {"1- Inserir Tipo Equipamento", "2- Consultar todos tipos de equipamentos", "0- Voltar"};
-    static String[] menuEq = {"1- Inserir Equipamento", "2- Consultar todos equipamentos", "0- Voltar"};
-    static String[] menuAv = {"1- Registar Avaria", "2- Consultar Avaria", "Alterar estado avaria", "0- Voltar"};
+    static String[] menuFunc = {"1 - Inserir Funcionário", "2 - Alterar Funcionário", "3 - Consultar todos Funcionários", "4 - Eliminar Funcionários", "0 - Voltar"};
+    static String[] menuAlterarFuncionario = {"1 - Alterar morada", "2 - Alterar numero telefone", "0 - Voltar"};
+    static String[] menuDiv = {"1 - Inserir Divisão", "2 - Consultar Divisão", "0 - Voltar"};
+    static String[] menuTipo = {"1 - Inserir Tipo Equipamento", "2 - Consultar todos tipos de equipamentos", "0 - Voltar"};
+    static String[] menuEq = {"1 - Inserir Equipamento", "2 - Consultar todos equipamentos", "0 - Voltar"};
+    static String[] menuAv = {"1 - Registar Avaria", "2 - Consultar Avaria", "3 - Alterar estado avaria", "0 - Voltar"};
 
     public static void main(String[] args) {
         int opcao = 0;
@@ -44,15 +45,47 @@ public class Main {
                                 inserirFuncionario();
                                 break;
                             case 2:
-                                alteraFuncionario();
+                                if (gestao.getNumeroTotalFuncionarios() > 0) {
+                                    System.out.println(gestao.mostrarTodosFuncionarios());
+                                    int nifFuncionario = Consola.lerInt("Insera o nif do Funcionario a que pretende fazer as alteraçoes: ", 000000000, 999999999);
+                                    int j = gestao.pesquisarFuncionario(nifFuncionario);
+                                    do {
+                                        System.out.println("### MENU ALTERAR FUNCIONARIO ###");
+                                        mostraMenu(menuAlterarFuncionario);
+                                        int opcao7 = lerInteiro("Introduza uma opção: ", 0, 2);
+                                        do {
+                                            Funcionario n = gestao.obterFuncionario(j);
+                                            if (j == -1) {
+                                                System.err.println("Não existe nenhum utilizador com esse nif, ou nif introduzido incorrectamente. ");
+                                                switch (opcao7) {
+                                                    case 1:
+                                                        String moradaNova = Consola.lerString("Indique a nova morada do funcionario: ");
+                                                        gestao.alteraMorada(moradaNova, j);
+                                                        break;
+                                                    case 2:
+                                                        int telefoneNovo = Consola.lerInt("Indique o novo telefone do funcionario: ",000000000,999999999);
+                                                        gestao.alteraTelefone(telefoneNovo, j);
+                                                        break;
+                                                    default:
+                                                        break;
+                                                }
+                                            }
+                                        } while (opcao7 != 0);
+                                    }while (j == -1 );
+                                }else System.out.println("Não existem funcionarios Inseridos. ");
                                 break;
                             case 3:
-                                System.out.println(gestao.mostrarTodosFuncionarios());
+                                if (gestao.getNumeroTotalFuncionarios() > 0) {
+                                    System.out.println(gestao.mostrarTodosFuncionarios());
+                                }else System.out.println("Não existem funcionarios Inseridos. ");
                                 break;
                             case 4:
-                                removerFuncionario();
+                                if (gestao.getNumeroTotalFuncionarios() > 0) {
+                                    removerFuncionario();
+                                }else System.out.println("Não existem funcionarios Inseridos. ");
                                 break;
                             default:
+                                gestao.gravarParaFicheiro();
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
@@ -69,9 +102,12 @@ public class Main {
                                 inserirDivisao();
                                 break;
                             case 2:
-                                pesquisaDivisao();
+                                if (gestao.getNumeroTotalDivisoes() > 0) {
+                                    pesquisaDivisao();
+                                }else System.out.println("Não existem divisoes Inseridos. ");
                                 break;
                             default:
+                                gestao.gravarParaFicheiro();
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
@@ -88,9 +124,12 @@ public class Main {
                                 adicionarTipoEquipamento();
                                 break;
                             case 2:
-                                System.out.println(gestao.mostrarTipos());
+                                if (gestao.getNumeroTotalTipoEquipamento() > 0) {
+                                    System.out.println(gestao.mostrarTipos());
+                                }else System.out.println("Não existem tipos de equipamento Inseridos. ");
                                 break;
                             default:
+                                gestao.gravarParaFicheiro();
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
@@ -108,9 +147,12 @@ public class Main {
                                 inserirEquipamento();
                                 break;
                             case 2:
-                                System.out.println(gestao.mostrarTipos());
+                                if (gestao.getNumeroTotalTipoEquipamento() > 0) {
+                                    System.out.println(gestao.mostrarTodosEquipamentos());
+                                }else System.out.println("Não existem equipamentos Inseridos. ");
                                 break;
                             default:
+                                gestao.gravarParaFicheiro();
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
@@ -127,12 +169,17 @@ public class Main {
                                 criarAvaria();
                                 break;
                             case 2:
-                                pesquisarAvaria();
+                                if (gestao.getNumeroTotalAvarias() > 0) {
+                                    pesquisarAvaria();
+                                }else System.out.println("Não existem Avarias Inseridos. ");
                                 break;
                             case 3:
-                                alterarEstadoAvaria();
+                                if (gestao.getNumeroTotalAvarias() > 0) {
+                                    alterarEstadoAvaria();
+                                }else System.out.println("Não existem Avarias Inseridos. ");
                                 break;
                             default:
+                                gestao.gravarParaFicheiro();
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
@@ -243,17 +290,20 @@ public class Main {
         }while (j != -1);
 
     }
-
+/*
     private static void alteraFuncionario() {
 
-        Funcionario funcionario;
+        Funcionario funcionario, n;
         int j, telefoneNovo;
         String moradaNova;
 
-        do {
-            int nifFuncionario = Consola.lerInt("Insera o nif do Funcionario a que pretende fazer as alteraçoes: ",000000000,999999999);
-            j = gestao.pesquisarFuncionario(nifFuncionario);
+        System.out.println(gestao.mostrarTodosFuncionarios());
+        int nifFuncionario = Consola.lerInt("Insera o nif do Funcionario a que pretende fazer as alteraçoes: ",000000000,999999999);
+        j = gestao.pesquisarFuncionario(nifFuncionario);
 
+        do {
+
+            n = gestao.obterFuncionario(j);
             if (j == -1){
                 System.err.println("Não existe nenhum utilizador com esse nif, ou nif introduzido incorrectamente. ");
             }else {
@@ -270,23 +320,28 @@ public class Main {
                     switch (opcao) {
                         case 1:
                             moradaNova = Consola.lerString("Indique a nova morada do funcionario: ");
-                            gestao.alteraMorada(nifFuncionario, moradaNova);
+                            //gestao.alteraMorada(moradaNova, j);
+                            n.setMorada(moradaNova);
+
                             break;
                         case 2:
                             telefoneNovo = Consola.lerInt("Indique o novo telefone do funcionario: ",000000000,999999999);
-                            gestao.alteraTelefone(nifFuncionario, telefoneNovo);
+                            //gestao.alteraTelefone(telefoneNovo, j);
+                            n.setTelefone(telefoneNovo);
                             break;
                         default:
                             System.out.println("Opção inválida.");
+                            break;
                     }
                 } while (opcao != 0);
             }
         }while (j == -1);
     }
-
+*/
     public static void removerFuncionario() {
         int nifFuncionario, j;
         do {
+            System.out.println(gestao.mostrarTodosFuncionarios());
             nifFuncionario = Consola.lerInt("Insira o nif do funcionario que pretende Eleminar: ", 000000000, 999999999);
             j = gestao.pesquisarFuncionario(nifFuncionario);
             if (j != -1){
@@ -565,7 +620,8 @@ public class Main {
         Reparacao reparacao;
 
         do {
-            idAvaria = Consola.lerInt("Indique qual o id da Avaria a que pretende mudar o estado: ", 000000000, 999999999);;
+            System.out.println(gestao.mostrarTodasAvarias());
+            idAvaria = Consola.lerInt("Indique qual o id da Avaria a que pretende mudar o estado: ", 000000000, 999999999);
             j = gestao.pesquisarAvaria(idAvaria);
             if(j == -1){
                 System.out.println("Nenhuma avaria encontrada com o id introduzido. ");
@@ -576,7 +632,6 @@ public class Main {
 
         do {
             opcao = Consola.lerInt("Opção: ", 1, 2);
-
             System.out.println("Para que estado pretende alterar o estado do equipamento ?\n ");
             System.out.println("1- Reparado ");
             System.out.println("2- Irreparavél - abater ");
@@ -591,6 +646,7 @@ public class Main {
             custo = Consola.lerFloat("Insira o custo da reparação: ", 000000000, 999999999);
 
             do {
+                System.out.println(gestao.mostrarTodosFuncionarios());
                 nifFuncionario = Consola.lerInt("Insira o nif do técnico que realizou a reparação: ", 000000000,999999999);
                 j = gestao.pesquisarFuncionario(nifFuncionario);
                 if (j==-1)
@@ -614,9 +670,7 @@ public class Main {
             avaria.getEquipamentoAssociado().adicioarReparacao(reparacao);
             reparacao.getAvaria().setEstadoAvaria(ESTADOAVARIA.reparado);
             gestao.adicionarReparacao(reparacao);
-            //System.out.println("Alteracao de estado do equipamento feita com sucesso!");
-
-
+            System.out.println("Estado do equipamento alterado. ");
         }
         if (opcao == 2) {
             avaria.getEquipamentoAssociado().setEstadoEquipamento(ESTADOEQUIPAMENTO.abatido);
@@ -651,7 +705,7 @@ public class Main {
             avaria.getEquipamentoAssociado().adicioarReparacao(reparacao);
             reparacao.getAvaria().setEstadoAvaria(ESTADOAVARIA.irreparavel);
             gestao.adicionarReparacao(reparacao);
-            //System.out.println("Alteracao de estado do equipamento feita com sucesso!");
+            System.out.println("Estado do equipamento alterado. ");
         }
     }
 

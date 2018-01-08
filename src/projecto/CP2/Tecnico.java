@@ -31,13 +31,14 @@ public class Tecnico extends OutrosFuncionarios implements Serializable{
     @Override
     public String toString() {
         return "Tecnico{" +
-                "funcao='" + funcao + '\'' +
-                ", nome='" + nome + '\'' +
-                ", morada='" + morada + '\'' +
-                ", telefone=" + telefone +
-                ", email='" + email + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                ", habilitacoes='" + habilitacoes + '\'' +
+                "funcao ='" + funcao + '\'' +
+                "nif ='" + nifFuncionario + '\'' +
+                ", nome ='" + nome + '\'' +
+                ", morada ='" + morada + '\'' +
+                ", telefone =" + telefone +
+                ", email ='" + email + '\'' +
+                ", dataNascimento =" + dataNascimento +
+                ", habilitacoes ='" + habilitacoes + '\'' +
                 '}';
     }
 }

@@ -27,6 +27,10 @@ public class Gestao {
         tiposEquipamento.add(tipo);
     }
 
+    public int getNumeroTotalTipoEquipamento() {
+        return tiposEquipamento.size();
+    }
+
     //MostrarTudo
     public String mostrarTipos() {
         StringBuilder str = new StringBuilder();
@@ -67,6 +71,10 @@ public class Gestao {
         funcionarios.remove(j);
     }
 
+    public int getNumeroTotalFuncionarios() {
+        return funcionarios.size();
+    }
+
     //Pesquisar Funcionario por nif
     public int pesquisarFuncionario(int nif){
         for (int i = 0; i < funcionarios.size(); i++){
@@ -90,7 +98,7 @@ public class Gestao {
         return str.toString();
     }
 
-    public void alteraMorada (int nifFuncionario, String novaMorada) {
+    public void alteraMorada (String novaMorada, int nifFuncionario) {
         for (int i = 0; i < funcionarios.size(); i++){
             if (funcionarios.get(i).getNifFuncionario() == nifFuncionario) {
                 funcionarios.get(i).setMorada(novaMorada);
@@ -98,7 +106,7 @@ public class Gestao {
         }
     }
 
-    public void alteraTelefone (int nifFuncionario, int novoTelefone) {
+    public void alteraTelefone (int novoTelefone, int nifFuncionario) {
         for (int i = 0; i < funcionarios.size(); i++){
             if (funcionarios.get(i).getNifFuncionario() == nifFuncionario) {
                 funcionarios.get(i).setTelefone(novoTelefone);
@@ -106,22 +114,14 @@ public class Gestao {
         }
     }
 
-    /*private void alteraTelefone() {
-        int nif = Consola.lerInt("Indique o nif do funcionário: ", 1, 999999999);
-
-        for (int i = 0; i < funcionarios.size(); i++) {
-            if (funcionarios.get(i).getNif() == nif) {
-                int telefone = Consola.lerInt("Indique o telefone:", 1, 999999999);
-                funcionarios.get(i).setTelefone(telefone);
-            } else {
-                System.out.println("Funcionario não existe. ");
-            }
-        }
-    }*/
     /////////////////////////////////////////////EQUIPAMENTO
 
     public void adicionarEquipamento(Equipamento equipamento) {
         equipamentos.add(equipamento);
+    }
+
+    public int getNumeroTotalEquipamentos() {
+        return equipamentos.size();
     }
 
     public int pesquisarEquipamento(int numeroIventario) {
@@ -159,6 +159,10 @@ public class Gestao {
         return divisoes.get(pos);
     }
 
+    public int getNumeroTotalDivisoes() {
+        return divisoes.size();
+    }
+
     public int procurarDesignacaoNasDivisoes(String designacao){
         for (int i = 0; i < divisoes.size(); i++){
             if (divisoes.get(i).getDesignacao().equalsIgnoreCase(designacao)){
@@ -173,6 +177,10 @@ public class Gestao {
         avarias.add(avaria);
     }
 
+    public int getNumeroTotalAvarias() {
+        return avarias.size();
+    }
+
     public int pesquisarAvaria(int idAvaria) {
         for (int i = 0; i < avarias.size(); i++){
             if (avarias.get(i).getIdAvaria() == idAvaria){
@@ -184,7 +192,6 @@ public class Gestao {
 
     public String mostrarTodasAvarias() {
         StringBuilder str = new StringBuilder();
-
         for (int i = 0; i < avarias.size(); i++) {
             str.append(avarias.get(i)).append("\n");
         }
@@ -203,6 +210,11 @@ public class Gestao {
     public int getNumReparacoes() {
         return reparacoes.size();
     }
+
+    public int getNumeroTotalReparacoes() {
+        return reparacoes.size();
+    }
+
     public int pesquisarReparacoes(int numReparacao) {
         for (int i = 0; i < reparacoes.size(); i++){
             if (reparacoes.get(i).getIdReparacao() == numReparacao){
@@ -273,7 +285,7 @@ public class Gestao {
             System.out.println("Reparacao: "+ reparacoes);
 
             //Fecha Ficheiro
-            //inputDados.close();
+            inputDados.close();
 
         }catch (Exception ex){
             ex.printStackTrace();
