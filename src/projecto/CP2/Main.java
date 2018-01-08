@@ -10,14 +10,16 @@ public class Main {
     private static Gestao gestao = new Gestao();
 
     static Scanner sc = new Scanner(System.in);
-    static String[] menuPrincipal = {"1- Gerir Funcionários",
-            "2- Gerir Divisões",
-            "3- Gerir Equipamentos",
-            "4- Gerir Avarias",
-            "0- Sair"};
+    static String[] menuPrincipal = {"1 - Gerir Funcionários",
+            "2 - Gerir Divisões",
+            "3 - Gerir Tipos Equipamentos",
+            "4 - Gerir Equipamentos",
+            "5 - Gerir Avarias",
+            "0 - Sair"};
 
     static String[] menuFunc = {"1- Inserir Funcionário", "2- Alterar Funcionário", "3- Consultar todos Funcionários", "4- Eliminar Funcionários", "0-Voltar"};
     static String[] menuDiv = {"1- Inserir Divisão", "2- Consultar Divisão", "0- Voltar"};
+    static String[] menuTipo = {"1- Inserir Tipo Equipamento", "2- Consultar todos tipos de equipamentos", "0- Voltar"};
     static String[] menuEq = {"1- Inserir Equipamento", "2- Consultar todos equipamentos", "0- Voltar"};
     static String[] menuAv = {"1- Registar Avaria", "2- Consultar Avaria", "Alterar estado avaria", "0- Voltar"};
 
@@ -29,7 +31,7 @@ public class Main {
         do {
             System.out.println("### MENU PRINCIPAL ###");
             mostraMenu(menuPrincipal);
-            opcao = lerInteiro("Introduza uma opção: ", 0, 4);
+            opcao = lerInteiro("Introduza uma opção: ", 0, 7);
             switch (opcao) {
                 case 1:
                     int opcao2 = 0;
@@ -75,15 +77,15 @@ public class Main {
                         }
                     } while (opcao3 != 0);
                     break;
-                case 3:
+                case 3://MENU TIPOS EQUIPAMENTO
                     int opcao4 = 0;
                     do {
-                        System.out.println("### MENU EQUIPAMENTO ###");
-                        mostraMenu(menuEq);
+                        System.out.println("### MENU TIPO EQUIPAMENTO ###");
+                        mostraMenu(menuTipo);
                         opcao4 = lerInteiro("Introduza uma opção: ", 0, 2);
                         switch (opcao4) {
                             case 1:
-                                inserirEquipamento();
+                                adicionarTipoEquipamento();
                                 break;
                             case 2:
                                 System.out.println(gestao.mostrarTipos());
@@ -94,27 +96,47 @@ public class Main {
                         }
                     } while (opcao4 != 0);
                     break;
-                case 4:
+
+                    case 4:
                     int opcao5 = 0;
                     do {
-                        System.out.println("### MENU AVARIAS ###");
-                        mostraMenu(menuAv);
-                        opcao5 = lerInteiro("Introduza uma opção: ", 0, 3);
+                        System.out.println("### MENU EQUIPAMENTO ###");
+                        mostraMenu(menuEq);
+                        opcao5 = lerInteiro("Introduza uma opção: ", 0, 2);
                         switch (opcao5) {
                             case 1:
-                                criarAvaria();
+                                inserirEquipamento();
                                 break;
                             case 2:
-                                alterarEstadoAvaria();
-                                break;
-                            case 3:
-                                pesquisarAvaria();
+                                System.out.println(gestao.mostrarTipos());
                                 break;
                             default:
                                 System.out.println("A voltar ao menu anterior..");
                                 break;
                         }
                     } while (opcao5 != 0);
+                    break;
+                case 5:
+                    int opcao6 = 0;
+                    do {
+                        System.out.println("### MENU AVARIAS ###");
+                        mostraMenu(menuAv);
+                        opcao6 = lerInteiro("Introduza uma opção: ", 0, 3);
+                        switch (opcao6) {
+                            case 1:
+                                criarAvaria();
+                                break;
+                            case 2:
+                                pesquisarAvaria();
+                                break;
+                            case 3:
+                                alterarEstadoAvaria();
+                                break;
+                            default:
+                                System.out.println("A voltar ao menu anterior..");
+                                break;
+                        }
+                    } while (opcao6 != 0);
                     break;
                 case 0:
                     System.out.println("0- A sair...");
@@ -145,7 +167,7 @@ public class Main {
 
     //////////////////////////////////////////////FUNCIONARIO
     public static void inserirFuncionario() {
-        int nifFuncionario, telefone, pos, j, menuTipoFuncionario;
+        int nifFuncionario, telefone, j, menuTipoFuncionario;
         int errodn = 0;
         String nome, morada, habilitacoes, email, especialidade, seccao, funcao, login, password;
         Calendar dataNascimento = new GregorianCalendar();
@@ -267,15 +289,85 @@ public class Main {
         do {
             nifFuncionario = Consola.lerInt("Insira o nif do funcionario que pretende Eleminar: ", 000000000, 999999999);
             j = gestao.pesquisarFuncionario(nifFuncionario);
-            if (j == -1)
-                System.err.println("O funcionario com eese nif não existe ou ja foi eliminado");
+            if (j != -1){
+                gestao.removerFuncionario(j);
+                System.err.println("Funcionario removido");
+                break;
+            }else{
+                System.err.println("O funcionario com esse nif não existe ou ja foi eliminado");
+            }
         } while (j == -1);
 
-        gestao.removerFuncionario(nifFuncionario);
+        //System.err.println("O funcionario com esse nif não existe ou ja foi eliminado");
         //System.out.println("Funcionário removido com sucesso!");
     }
 
 ///////////////////////////////////////////////EQUIPAMENTO
+
+    public static void inserirEquipamento(){
+
+        int numeroIventario,numeroSerie, nifFuncionario, numeroTipo, j;
+        String descricao;
+        float custo;
+        Calendar dataIventario = Calendar.getInstance();
+        Equipamento equipamento;
+        TipoEquipamento tipoEquipamento;
+        Funcionario funcionario;
+        Tecnico tecnico;
+
+        do {
+            nifFuncionario = Consola.lerInt("Insira o nif do Funcionario:", 000000000,999999999);
+            j = gestao.pesquisarFuncionario(nifFuncionario);
+            if (j == -1)
+                System.err.println("não existem nenhum funcionario com esse nif. ");
+            else{
+                funcionario = gestao.obterFuncionario(j);
+
+                if (funcionario instanceof Tecnico) {
+                    tecnico = (Tecnico) funcionario;
+
+                    do {
+                        numeroIventario = Consola.lerInt("Indique o numero de inventário:", 1, Integer.MAX_VALUE);
+                        j = gestao.pesquisarEquipamento(numeroIventario);
+                        if (j != -1)
+                            System.err.println("Já existe um equipamento com esse número");
+                    } while (j != -1); //repete se ja existir número
+
+                    descricao = Consola.lerString("Descricao do equipamento: ");
+                    numeroSerie = Consola.lerInt("Indique o numero de Serie:", 000000000, 999999999);
+                    custo = Consola.lerFloat("Indique qual o custo do equipamento: ", 000000000, 999999999);
+
+                    System.out.println(gestao.mostrarTipos());
+                    do {
+
+                        numeroTipo = Consola.lerInt("Numero do Tipo de Equipamento: ", 000000000, 999999999);
+                        j = gestao.pesquisaTipo(numeroTipo);
+
+                        if (j == -1) {
+                            System.out.println("[AVISO] Tipo de equipamento nao encontrado! coloque uma da Listagem anterior.");
+                        }
+                    } while (j == -1);
+
+                    tipoEquipamento = new TipoEquipamento(descricao);
+
+                    //tipoEquipamento = gestao.obterTipo(j);
+
+                    equipamento = new Equipamento(descricao, numeroIventario, numeroSerie, custo, dataIventario, tipoEquipamento, tecnico);
+
+                    tipoEquipamento.setTotalEquipamentos(tipoEquipamento.getTotalEquipamentos() + 1);
+
+                    gestao.adicionarEquipamento(equipamento);
+
+                    System.out.println("Equipamento criado com sucesso!");
+                }else{
+                    //j=-1;
+                    System.err.println("Esse Funcionário não é tecnico");
+                }
+            }
+        } while (j == -1); //repete se ja existir número
+    }
+
+
     public void registarEquipamento() {
 
         int numeroSerie, numeroIventario, nifTecnico, j, numeroTipoEquipamento;
@@ -345,6 +437,20 @@ public class Main {
 
         System.out.println("Equipamento adicionado com sucesso!");
     }
+
+    //////////////////////////////////////////////TIPOEQUIPAMENTO
+    //AdicionarTipo
+    public static void adicionarTipoEquipamento( ) {
+        String designacao;
+        TipoEquipamento tipoEquipamento;
+
+        designacao = Consola.lerString("Indique qual a designação do Tipo de Equipamento: ");
+        tipoEquipamento = new TipoEquipamento(designacao);
+
+        gestao.adicionarTipoEquipamento(tipoEquipamento);
+        System.out.println("Tipo de Equipamento Inserido com Sucesso!");
+    }
+
 
     //////////////////////////////////////////////DIVISAO
 
@@ -421,33 +527,30 @@ public class Main {
         Avaria avaria;
 
         do {
+            System.out.println(gestao.mostrarTodosEquipamentos());
             numeroInventario = Consola.lerInt("Insira o numero de inventario do equipamento avariado: ", 000000000, 999999999);
             j = gestao.pesquisarEquipamento(numeroInventario);
+            if (j == -1) {
+                System.out.println("Nenhum equipamento encontrado com esse numero de inventario. ");
+            }
+        }while (j == -1) ;
 
-            if(j != -1){
-                System.out.println("Equipamento já existe");
-                break;
+        equipamento = gestao.obterEquipamento(j);
+        descricao = Consola.lerString("Insira a descricao da avaria: ");
+        System.out.println("Avaria inserida com Sucesso!");
 
-            }else
-                equipamento = gestao.obterEquipamento(numeroInventario);
-                descricao = Consola.lerString("Insira a descricao da avaria: ");
-                do {
-                    nifFuncionario = Consola.lerInt("Insira o nif do funcionário:", 000000000,999999999);
-                    n = gestao.pesquisarFuncionario(nifFuncionario);
-                    if (n ==-1)
-                        System.err.println("Numero incorrecto ou não existe nehum funcionario com esse numero");
-                } while (n != -1);
-                funcionario = gestao.obterFuncionario(j);
-                avaria = new Avaria(equipamento, descricao, funcionario);
-                equipamento.adicioarAvariaEquipamento(avaria);
-                //equipamento.setEstado(ESTADO.INDISPONIVEL);
-                gestao.criarAvaria(avaria);
+        do {
+            nifFuncionario = Consola.lerInt("Insira o nif do funcionário:", 000000000, 999999999);
+            n = gestao.pesquisarFuncionario(nifFuncionario);
+            if (n == -1)
+                System.err.println("Numero incorrecto ou não existe nehum funcionario com esse numero");
+        } while (n == -1);
 
-                //System.out.println("Avaria inserida com Sucesso!");
-
-        }while (j == -1);
-
-
+        funcionario = gestao.obterFuncionario(j);
+        avaria = new Avaria(equipamento, descricao, funcionario);
+        equipamento.adicioarAvariaEquipamento(avaria);
+        equipamento.setEstadoEquipamento(ESTADOEQUIPAMENTO.indisponivel);
+        gestao.criarAvaria(avaria);
     }
 
     private static void alterarEstadoAvaria() {
@@ -476,7 +579,7 @@ public class Main {
 
             System.out.println("Para que estado pretende alterar o estado do equipamento ?\n ");
             System.out.println("1- Reparado ");
-            System.out.println("2- Irreparavél ");
+            System.out.println("2- Irreparavél - abater ");
 
         } while (opcao !=1 && opcao != 2);
 
@@ -556,96 +659,18 @@ public class Main {
         int numeroEquipamento, j;
         Equipamento equipamento;
 
-        /*System.out.println("------------------ LISTAGEM EQUIPAMENTOS ------------------");
-        System.out.println(gestao.mostrarTodosEquipamentos());
-        System.out.println("------------------ FIM LISTAGEM ------------------");*/
         do {
 
             numeroEquipamento = Consola.lerInt("Número de Inventario do equipamento que pretende consultar: ", 000000000, 999999999);
             j = gestao.pesquisarEquipamento(numeroEquipamento);
 
             if(j == -1){
-                System.out.println("[AVISO] Equipamento não encontrado! Coloque uma da listagem anterior.");
+                System.out.println("Equipamento não encontrado!");
             }
         }while (j == -1);
 
         equipamento = gestao.obterEquipamento(j);
         System.out.println(equipamento.mostrarAvariasEquipamento());
         //System.out.println(equipamento.mostrarReparacoes());
-    }
-
-
-    //////////////////////////////////////////////TIPOEQUIPAMENTO
-    //AdicionarTipo
-    public static void adicionarTipoEquipamento( ) {
-        String designacao;
-        TipoEquipamento tipoEquipamento;
-
-        designacao = Consola.lerString("Indique qual a designação do Tipo de Equipamento: ");
-        tipoEquipamento = new TipoEquipamento(designacao);
-
-        gestao.adicionarTipoEquipamento(tipoEquipamento);
-        //System.out.println("Tipo de Equipamento Inserido com Sucesso!");
-    }
-
-    public static void inserirEquipamento(){
-
-        int numeroIventario,numeroSerie, nifFuncionario, numeroTipo, j;
-        String descricao;
-        float custo;
-        Calendar dataIventario = Calendar.getInstance();
-        Equipamento equipamento;
-        TipoEquipamento tipoEquipamento;
-        Funcionario funcionario;
-        Tecnico tecnico;
-
-        do {
-            nifFuncionario = Consola.lerInt("Insira o nif do Funcionario:", 000000000,999999999);
-            j = gestao.pesquisarFuncionario(nifFuncionario);
-            if (j == -1)
-                System.err.println("não existem nenhum funcionario com esse nif. ");
-            else{
-                funcionario = gestao.obterFuncionario(j);
-
-                if (funcionario instanceof Tecnico) {
-                    tecnico = (Tecnico) funcionario;
-
-                    do {
-                        numeroIventario = Consola.lerInt("Indique o numero de inventário:", 1, Integer.MAX_VALUE);
-                        j = gestao.pesquisarEquipamento(numeroIventario);
-                        if (j != -1)
-                            System.err.println("Já existe um equipamento com esse número");
-                    } while (j != -1); //repete se ja existir número
-
-                    descricao = Consola.lerString("Descricao do equipamento: ");
-                    numeroSerie = Consola.lerInt("Indique o numero de Serie:", 000000000, 999999999);
-                    custo = Consola.lerFloat("Indique qual o custo do equipamento: ", 000000000, 999999999);
-
-                    System.out.println(gestao.mostrarTipos());
-                    do {
-
-                        numeroTipo = Consola.lerInt("Numero do Tipo de Equipamento: ", 000000000, 999999999);
-                        j = gestao.pesquisaTipo(numeroTipo);
-
-                        if (j == -1) {
-                            System.out.println("[AVISO] Tipo de equipamento nao encontrado! coloque uma da Listagem anterior.");
-                        }
-                    } while (j == -1);
-
-                    tipoEquipamento = gestao.obterTipo(j);
-
-                    equipamento = new Equipamento(descricao, numeroIventario, numeroSerie, custo, dataIventario, tipoEquipamento, tecnico);
-
-                    tipoEquipamento.setTotalEquipamentos(tipoEquipamento.getTotalEquipamentos() + 1);
-
-                    gestao.adicionarEquipamento(equipamento);
-
-                    System.out.println("Equipamento criado com sucesso!");
-                }else{
-                    //j=-1;
-                    System.err.println("Esse Funcionário não é tecnico");
-                }
-            }
-        } while (j == -1); //repete se ja existir número
     }
 }

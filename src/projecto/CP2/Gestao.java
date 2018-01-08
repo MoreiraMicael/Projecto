@@ -1,7 +1,6 @@
 package projecto.CP2;
 
 import util.Consola;
-
 import javax.naming.Context;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,11 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.management.ThreadInfo;
 import java.util.ArrayList;
-/*
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
-*/
+
 public class Gestao {
     private ArrayList<TipoEquipamento> tiposEquipamento = new ArrayList<>();
     private ArrayList<Funcionario> funcionarios = new ArrayList<>();
@@ -31,6 +26,7 @@ public class Gestao {
         tipo.setNumero(tiposEquipamento.size() + 1);
         tiposEquipamento.add(tipo);
     }
+
     //MostrarTudo
     public String mostrarTipos() {
         StringBuilder str = new StringBuilder();
@@ -66,6 +62,11 @@ public class Gestao {
         funcionarios.add(funcionario);
     }
 
+    //RemoveFuncionario
+    public void removerFuncionario(int j) {
+        funcionarios.remove(j);
+    }
+
     //Pesquisar Funcionario por nif
     public int pesquisarFuncionario(int nif){
         for (int i = 0; i < funcionarios.size(); i++){
@@ -87,11 +88,6 @@ public class Gestao {
             str.append(funcionarios.get(i)).append("\n");
         }
         return str.toString();
-    }
-
-    //RemoveFuncionario
-    public void removerFuncionario(int nifFuncionario) {
-        funcionarios.remove(nifFuncionario);
     }
 
     public void alteraMorada (int nifFuncionario, String novaMorada) {
@@ -229,9 +225,11 @@ public class Gestao {
 
     public void gravarParaFicheiro(){
         try {
-        //Cria Ficheiro
-        FileOutputStream output = new FileOutputStream("C:\\Users\\Moreira\\IdeaProjects\\Projecto\\dados.txt");
-        ObjectOutputStream outputDados = new ObjectOutputStream(output);
+            //Cria Ficheiro
+            //FileOutputStream output = new FileOutputStream("C:\\Users\\Moreira\\IdeaProjects\\Projecto\\dados.txt");
+            //ObjectOutputStream outputDados = new ObjectOutputStream(output);
+
+            ObjectOutputStream outputDados = new ObjectOutputStream(new FileOutputStream("dados.txt"));
 
             //Escreve no Ficheiro
             outputDados.writeObject(tiposEquipamento);
@@ -252,7 +250,7 @@ public class Gestao {
     public void lerDoFicheiro(){
         try {
             //Lêr ficheiro e escreve na consola
-            ObjectInputStream inputDados = new ObjectInputStream(new FileInputStream("C:\\Users\\Moreira\\IdeaProjects\\Projecto\\dados.txt"));
+            ObjectInputStream inputDados = new ObjectInputStream(new FileInputStream("dados.txt"));
 
             tiposEquipamento = (ArrayList<TipoEquipamento>)inputDados.readObject();
             funcionarios = (ArrayList<Funcionario>)inputDados.readObject();

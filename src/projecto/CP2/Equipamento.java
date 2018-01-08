@@ -178,6 +178,11 @@ public class Equipamento implements Serializable {
 		this.totalAvariasEquipamento = totalAvariasEquipamento;
 	}
 
+	/**
+	 * Returns value of estadoEqupamento
+	 * @return
+	 */
+
 	public void adicioarAvariaEquipamento(Avaria avaria) {
 		avarias.add(avaria);
 	}
@@ -201,6 +206,7 @@ public class Equipamento implements Serializable {
 		}
 		return str.toString();
 	}
+
 
 
 	/**
