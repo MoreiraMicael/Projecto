@@ -43,7 +43,7 @@ public class Main {
                 case 1:
                     int opcao2 = 0;
                     do {
-                        System.out.println("### MENU FUNCIONÁRIO ###");
+                        System.out.println("### MENU FUNCIONARIO ###");
                         mostraMenu(menuFunc);
                         opcao2 = lerInteiro("Introduza uma opção: ", 0, 4);
                         switch (opcao2) {

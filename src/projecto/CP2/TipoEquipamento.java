@@ -17,7 +17,7 @@ public class TipoEquipamento implements Serializable{
 
     /**
      * Este é o construtor da classe TipoEquipamento
-     * @param designacao
+     * @param designacao designacao
      */
     public TipoEquipamento(String designacao) {
         this.designacao = designacao;

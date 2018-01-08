@@ -35,11 +35,11 @@ public class Reparacao implements Serializable {
     /**
      * Este é o contrutor da classe reparação
      *
-     * @param avaria
-     * @param dataReparacao
-     * @param descricao
-     * @param custo
-     * @param funcionario
+     * @param avaria avaria
+     * @param dataReparacao dataReparacao
+     * @param descricao descricao
+     * @param custo custo
+     * @param funcionario funcionario
      */
     public Reparacao(Avaria avaria, Calendar dataReparacao, String descricao, float custo, Funcionario funcionario) {
         this.avaria = avaria;

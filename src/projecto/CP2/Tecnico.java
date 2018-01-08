@@ -10,26 +10,26 @@ public class Tecnico extends OutrosFuncionarios implements Serializable {
     /**
      * login e password do técnico
      */
-    private String login, passworf;
+    private String login, password;
 
     /**
      * Este é o construtor da classe tecnico
      *
-     * @param nif
-     * @param nome
-     * @param morada
-     * @param telefone
-     * @param email
-     * @param dataNascimento
-     * @param habilitacoes
-     * @param funcao
-     * @param login
-     * @param password
+     * @param nif nif
+     * @param nome nome
+     * @param morada morada
+     * @param telefone telefone
+     * @param email email
+     * @param dataNascimento dataNascimento
+     * @param habilitacoes habilitacoes
+     * @param funcao funcao
+     * @param login login
+     * @param password password
      */
-    public Tecnico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String funcao, String login, String passworf) {
+    public Tecnico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String funcao, String login, String password) {
         super(nif, nome, morada, telefone, email, dataNascimento, habilitacoes, funcao);
         this.login = login;
-        this.passworf = passworf;
+        this.password = password;
     }
 
     public String getLogin() {
@@ -41,11 +41,11 @@ public class Tecnico extends OutrosFuncionarios implements Serializable {
     }
 
     public String getPassworf() {
-        return passworf;
+        return password;
     }
 
     public void setPassworf(String passworf) {
-        this.passworf = passworf;
+        this.password = passworf;
     }
 
     /**

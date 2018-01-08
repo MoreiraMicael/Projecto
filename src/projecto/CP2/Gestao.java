@@ -82,7 +82,7 @@ public class Gestao {
     /**
      * método para pesquisar por tipo de equipamento
      *
-     * @param numero
+     * @param numero numero
      * @return tipo equipamento
      */
     public int pesquisaTipo(int numero) {
@@ -97,7 +97,7 @@ public class Gestao {
     /**
      * método para adicionar funcionários
      *
-     * @param funcionario
+     * @param funcionario funcionario
      */
 
     public void adicionarFuncionario(Funcionario funcionario) {
@@ -107,7 +107,7 @@ public class Gestao {
     /**
      * método para remover funcionários
      *
-     * @param j
+     * @param j j
      */
     public void removerFuncionario(int j) {
         funcionarios.remove(j);
@@ -120,7 +120,7 @@ public class Gestao {
     /**
      * método para pesquisar funcionário pelo nif
      *
-     * @param nif
+     * @param nif nif
      * @return funcionário
      */
     public int pesquisarFuncionario(int nif) {
@@ -152,8 +152,8 @@ public class Gestao {
     /**
      * método para alterar a morada dos funcionários
      *
-     * @param novaMorada
-     * @param nifFuncionario
+     * @param novaMorada novaMorada
+     * @param nifFuncionario nifFuncionario
      */
     public void alteraMorada(String novaMorada, int nifFuncionario) {
         for (int i = 0; i < funcionarios.size(); i++) {
@@ -166,8 +166,8 @@ public class Gestao {
     /**
      * método para alterar o telefone dos funcionários
      *
-     * @param novoTelefone
-     * @param nifFuncionario
+     * @param novoTelefone novoTelefone
+     * @param nifFuncionario nifFuncionario
      */
     public void alteraTelefone(int novoTelefone, int nifFuncionario) {
         for (int i = 0; i < funcionarios.size(); i++) {
@@ -180,7 +180,7 @@ public class Gestao {
     /**
      * método para adicionar equipamentos
      *
-     * @param equipamento
+     * @param equipamento equipamento
      */
 
     public void adicionarEquipamento(Equipamento equipamento) {
@@ -194,8 +194,8 @@ public class Gestao {
     /**
      * método para pesquisar um equipamento
      *
-     * @param numeroIventario
-     * @return equipamento
+     * @param numeroIventario numeroIventario
+     * @return equipamento equipamento
      */
     public int pesquisarEquipamento(int numeroIventario) {
         for (int i = 0; i < equipamentos.size(); i++) {
@@ -230,7 +230,7 @@ public class Gestao {
     /**
      * método para inserir divisões
      *
-     * @param divisao
+     * @param divisao divisao
      */
 
     public void inserirDivisao(Divisao divisao) {
@@ -256,8 +256,8 @@ public class Gestao {
     /**
      * método para procurar divisões por designação
      *
-     * @param designacao
-     * @return divisões
+     * @param designacao designacao
+     * @return divisões divisões
      */
     public int procurarDesignacaoNasDivisoes(String designacao) {
         for (int i = 0; i < divisoes.size(); i++) {
@@ -279,7 +279,7 @@ public class Gestao {
     /**
      * método para inserir uma avaria
      *
-     * @param avaria
+     * @param avaria avaria
      */
 
     public void criarAvaria(Avaria avaria) {
@@ -294,8 +294,8 @@ public class Gestao {
     /**
      * método para pesquisar uma avaria
      *
-     * @param idAvaria
-     * @return
+     * @param idAvaria idAvaria
+     * @return return numeroTotalAvarias
      */
     public int pesquisarAvaria(int idAvaria) {
         for (int i = 0; i < avarias.size(); i++) {
@@ -309,7 +309,7 @@ public class Gestao {
     /**
      * método para mostrar todas as avarias
      *
-     * @return
+     * @return return Avarias
      */
     public String mostrarTodasAvarias() {
         StringBuilder str = new StringBuilder();
@@ -326,7 +326,7 @@ public class Gestao {
     /**
      * método para inserir uma reparação
      *
-     * @param reparacao
+     * @param reparacao reparacao
      */
 
     public void adicionarReparacao(Reparacao reparacao) {
@@ -345,8 +345,8 @@ public class Gestao {
     /**
      * método para pesquisar uma reparação
      *
-     * @param numReparacao
-     * @return reparação
+     * @param numReparacao numReparacao
+     * @return reparação reparação
      */
     public int pesquisarReparacoes(int numReparacao) {
         for (int i = 0; i < reparacoes.size(); i++) {
@@ -360,7 +360,7 @@ public class Gestao {
     /**
      * método para mostrar todas as reparações
      *
-     * @return
+     * @return return Reparacoes
      */
     public String mostrarReparacoes() {
         StringBuilder str = new StringBuilder();
