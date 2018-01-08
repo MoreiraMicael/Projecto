@@ -18,6 +18,7 @@ public class Main {
             "3 - Gerir Tipos Equipamentos",
             "4 - Gerir Equipamentos",
             "5 - Gerir Avarias",
+            "6 - Estatisticas",
             "0 - Sair"};
 
     static String[] menuFunc = {"1 - Inserir Funcionário", "2 - Alterar Funcionário", "3 - Consultar todos Funcionários", "4 - Eliminar Funcionários", "0 - Voltar"};
@@ -25,7 +26,8 @@ public class Main {
     static String[] menuDiv = {"1 - Inserir Divisão", "2 - Consultar Divisão", "0 - Voltar"};
     static String[] menuTipo = {"1 - Inserir Tipo Equipamento", "2 - Consultar todos tipos de equipamentos", "0 - Voltar"};
     static String[] menuEq = {"1 - Inserir Equipamento", "2 - Consultar todos equipamentos", "3 - Associar Equipamento a Divisão", "4 - Consultar por Divisão", "0 - Voltar"};
-    static String[] menuAv = {"1 - Registar Avaria", "2 - Consultar Avaria", "3 - Alterar estado avaria", "0 - Voltar"};
+    static String[] menuAv = {"1 - Registar Avaria", "2 - Consultar Avaria", "3 - Alterar estado avaria", "4 - Reparações", "0 - Voltar"};
+    static String[] menuEstatisticas = {"1 - Percentagem de equipamentos com avarias no hospital", "2 - ", "3 - ", "4 - ", "0 - Voltar"};
 
     public static void main(String[] args) {
         int opcao = 0;
@@ -36,7 +38,7 @@ public class Main {
             System.out.println(gestao.mostrarNumeroDeEquipamentosPorTipo());
             System.out.println("### MENU PRINCIPAL ###");
             mostraMenu(menuPrincipal);
-            opcao = lerInteiro("Introduza uma opção: ", 0, 7);
+            opcao = lerInteiro("Introduza uma opção: ", 0, 8);
             switch (opcao) {
                 case 1:
                     int opcao2 = 0;
@@ -106,8 +108,8 @@ public class Main {
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalTipoEquipamento() > 0) {
-                                    System.out.println(gestao.mostrarTodosEquipamentos());
-                                }else System.out.println("Não Existem Equipamentos Inseridos.\n ");
+                                    System.out.println(gestao.mostrarTipos());
+                                }else System.out.println("Não Existem Tipos de Equipamentos Inseridos.\n ");
                                 break;
                             default:
                                 gestao.gravarParaFicheiro();
@@ -157,12 +159,12 @@ public class Main {
                     do {
                         System.out.println("### MENU AVARIAS ###");
                         mostraMenu(menuAv);
-                        opcao6 = lerInteiro("Introduza uma opção: ", 0, 3);
+                        opcao6 = lerInteiro("Introduza uma opção: ", 0, 4);
                         switch (opcao6) {
                             case 1:
                                 if (gestao.getNumeroTotalEquipamentos() > 0) {
                                     criarAvaria();
-                                }else System.err.println("Não existem Avarias Inseridas.\n ");
+                                }else System.err.println("Não existem Equipamentos Inseridos.\n ");
                                 break;
                             case 2:
                                 if (gestao.getNumeroTotalAvarias() > 0) {
@@ -174,6 +176,11 @@ public class Main {
                                     alterarEstadoAvaria();
                                 }else System.err.println("Não existem Avarias Inseridas.\n ");
                                 break;
+                            case 4:
+                                if (gestao.getNumeroTotalAvarias() > 0) {
+                                    pesquisarReparacao();
+                                }else System.err.println("Não existem Avarias Inseridas.\n ");
+                                break;
                             default:
                                 gestao.gravarParaFicheiro();
                                 System.out.println("A Guardar Alterações..\n");
@@ -181,6 +188,30 @@ public class Main {
                                 break;
                         }
                     } while (opcao6 != 0);
+                    break;
+                case 6:
+                    int opcao8 = 0;
+                    do {
+                        System.out.println("### MENU ESTATISTICAS ###");
+                        mostraMenu(menuEstatisticas);
+                        opcao8 = lerInteiro("Introduza uma opção: ", 0, 4);
+                        switch (opcao8) {
+                            case 1:
+                                if (gestao.getNumeroTotalAvarias() > 0) {
+                                    gestao.percentagemAvarias();
+                                }else System.err.println("Não existem Avarias Inseridas.\n ");
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                            case 4:
+                                break;
+                            default:
+                                System.out.println("A voltar ao menu anterior..\n");
+                                break;
+                        }
+                    } while (opcao8 != 0);
                     break;
                 case 0:
                     System.out.println("0- A sair...");
@@ -463,7 +494,7 @@ public class Main {
             System.out.println(gestao.mostrarTodasDivisoes());
             designacao = Consola.lerString("Indique a designação da divisão: ");
             j = gestao.procurarDesignacaoNasDivisoes(designacao);
-                if (j != -1)
+                if (j == -1)
                     System.err.println("Não existe nenhuma divisão com essa designação.  ");
         }while (j == -1);
             divisao = gestao.obterDivisao(j);
@@ -486,14 +517,14 @@ public class Main {
             }
         }while (j == -1) ;
         equipamento = gestao.obterEquipamento(j);
-        descricao = Consola.lerString("Insira a descricao da avaria: ");
-        System.out.println("Avaria inserida com Sucesso!");
         do {
             nifFuncionario = Consola.lerInt("Insira o nif do funcionário:", 000000000, 999999999);
             n = gestao.pesquisarFuncionario(nifFuncionario);
             if (n == -1)
                 System.err.println("Numero incorrecto ou não existe nehum funcionario com esse numero");
         } while (n == -1);
+        descricao = Consola.lerString("Insira a descricao da avaria: ");
+        System.out.println("Avaria inserida com Sucesso!");
         funcionario = gestao.obterFuncionario(j);
         avaria = new Avaria(equipamento, descricao, funcionario);
         equipamento.adicioarAvariaEquipamento(avaria);
@@ -597,6 +628,19 @@ public class Main {
         }while (j == -1);
         equipamento = gestao.obterEquipamento(j);
         System.out.println(equipamento.mostrarAvariasEquipamento());
-        //System.out.println(equipamento.mostrarReparacoes());
+    }
+
+    private static void pesquisarReparacao() {
+        int numeroEquipamento, j;
+        Equipamento equipamento;
+        do {
+            numeroEquipamento = Consola.lerInt("Número de Inventario do equipamento que pretende consultar: ", 000000000, 999999999);
+            j = gestao.pesquisarEquipamento(numeroEquipamento);
+            if(j == -1){
+                System.out.println("Equipamento não encontrado!");
+            }
+        }while (j == -1);
+        equipamento = gestao.obterEquipamento(j);
+        System.out.println(equipamento.mostrarReparacoes());
     }
 }

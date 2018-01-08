@@ -3,11 +3,34 @@ package projecto.CP2;
 import java.io.Serializable;
 import java.util.Calendar;
 
+/**
+ * Esta classe contém todos os dados sobre os funcionários
+ */
 public class Funcionario implements Serializable {
+    /**
+     * nif do funcionário, telefone, idade, número total de funcionários
+     */
     protected int nifFuncionario, telefone, anos, numeroTotalFuncionarios;
+    /**
+     * nome do funcionário, morada, email, habilitações
+     */
     protected String nome, morada, email, habilitacoes;
+    /**
+     * data de nascimento
+     */
     protected Calendar dataNascimento;
 
+    /**
+     * este é o construtor da classe funcionário
+     *
+     * @param nif            do funcionário
+     * @param nome           do funcionário
+     * @param morada         do funcionário
+     * @param telefone       do funcionário
+     * @param email          do funcionário
+     * @param dataNascimento do funcionário
+     * @param habilitacoes   do funcionário
+     */
     public Funcionario(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes) {
         this.nifFuncionario = nif;
         this.nome = nome;
@@ -83,24 +106,39 @@ public class Funcionario implements Serializable {
         this.numeroTotalFuncionarios = numeroTotalFuncionarios;
     }
 
-    public  int calcularIdade() {
+    /**
+     * método para calcular a idade do funcionário
+     *
+     * @return valor inteiro
+     */
+    public int calcularIdade() {
         int anos;
-        Calendar dataAtual= Calendar.getInstance();
-        anos= dataAtual.get(Calendar.YEAR)-dataNascimento.
+        Calendar dataAtual = Calendar.getInstance();
+        anos = dataAtual.get(Calendar.YEAR) - dataNascimento.
                 get(Calendar.YEAR);
-        if (dataAtual.get(Calendar.DAY_OF_YEAR)<
-                dataNascimento.get(Calendar.DAY_OF_YEAR) )
-            anos --;
+        if (dataAtual.get(Calendar.DAY_OF_YEAR) <
+                dataNascimento.get(Calendar.DAY_OF_YEAR))
+            anos--;
         return anos;
     }
 
-    public boolean maiorIdade(){
-        if (anos >= 18){
+    /**
+     * método para verificar se o funcionário é maior de idade
+     *
+     * @return verdadeiro ou falso
+     */
+    public boolean maiorIdade() {
+        if (anos >= 18) {
             return true;
-        }else
+        } else
             return false;
     }
 
+    /**
+     * mostra todos os dados da classe funcionário
+     *
+     * @return dados da classe funcionário
+     */
     @Override
     public String toString() {
         return "Funcionario{" +

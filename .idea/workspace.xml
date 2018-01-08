@@ -2,17 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90023f80-a5ec-4998-b7cc-fa556525433b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/projecto/CP2/TotalAnos.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/projecto/CP2/TotalAvariasAno.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/dados.txt" afterPath="$PROJECT_DIR$/dados.txt" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Avaria.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Avaria.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Divisao.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Divisao.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/ESTADOAVARIA.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/ESTADOAVARIA.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/ESTADOEQUIPAMENTO.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/ESTADOEQUIPAMENTO.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Equipamento.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Equipamento.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Funcionario.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Funcionario.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Gestao.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Gestao.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Main.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Main.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Medico.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Medico.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/OutrosFuncionarios.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/OutrosFuncionarios.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Reparacao.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Reparacao.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Tecnico.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/Tecnico.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/TipoEquipamento.class" afterPath="$PROJECT_DIR$/out/production/Projecto/projecto/CP2/TipoEquipamento.class" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Avaria.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Avaria.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Divisao.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Divisao.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java" />
       <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Equipamento.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Equipamento.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Funcionario.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Funcionario.java" />
       <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Gestao.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Gestao.java" />
       <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Main.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Medico.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Medico.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/OutrosFuncionarios.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/OutrosFuncionarios.java" />
+      <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Reparacao.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Reparacao.java" />
       <change beforePath="$PROJECT_DIR$/src/projecto/CP2/Tecnico.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/Tecnico.java" />
       <change beforePath="$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java" afterPath="$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java" />
     </list>
@@ -28,13 +44,171 @@
     <SUITE FILE_PATH="coverage/Projecto$Main.coverage" NAME="Main Coverage Results" MODIFIED="1515358582351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="37" column="76" lean-forward="false" selection-start-line="37" selection-start-column="76" selection-end-line="37" selection-end-column="76" />
+              <folding>
+                <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
+                <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
+                <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
+                <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
+                <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
+                <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
+                <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Avaria.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Avaria.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TotalAnos.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TotalAnos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+              <folding>
+                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TotalAvariasAno.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TotalAvariasAno.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+              <folding>
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TipoEquipamento.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="58" column="58" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="58" />
+              <folding>
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#683#684#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#885#886#0" expanded="true" />
+                <element signature="e#922#923#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ESTADOEQUIPAMENTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Equipamento.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Equipamento.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;field#descricao#0;class#Equipamento#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gestao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Gestao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="251" column="9" lean-forward="true" selection-start-line="251" selection-start-column="9" selection-end-line="251" selection-end-column="9" />
+              <folding>
+                <element signature="e#3403#3404#0" expanded="true" />
+                <element signature="e#3447#3448#0" expanded="true" />
+                <element signature="e#5880#5881#0" expanded="true" />
+                <element signature="e#5924#5925#0" expanded="true" />
+                <element signature="e#6143#6144#0" expanded="true" />
+                <element signature="e#6183#6184#0" expanded="true" />
+                <element signature="e#8168#8169#0" expanded="true" />
+                <element signature="e#8207#8208#0" expanded="true" />
+                <element signature="e#9369#9370#0" expanded="true" />
+                <element signature="e#9411#9412#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ESTADOAVARIA.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reparacao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Reparacao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="997">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -48,7 +222,6 @@
       <find>add</find>
       <find>errodi</find>
       <find>erro</find>
-      <find>avaria</find>
       <find>estado</find>
       <find>pesq</find>
       <find>menuFunc</find>
@@ -59,6 +232,14 @@
       <find>adicio</find>
       <find>adicionarEquipamento</find>
       <find>obterD</find>
+      <find>getTi</find>
+      <find>set</find>
+      <find>getNumeroTotalDivisoes</find>
+      <find>repara</find>
+      <find>criarA</find>
+      <find>setTotalEquipamentos</find>
+      <find>avaria</find>
+      <find>+ 1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,27 +256,29 @@
         <option value="$PROJECT_DIR$/src/util/Consola.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/estado.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/ESTADO.java" />
-        <option value="$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java" />
-        <option value="$PROJECT_DIR$/src/projecto/CP2/Reparacao.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/Divisao.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Avaria.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Funcionario.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Medico.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/OutrosFuncionarios.java" />
-        <option value="$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/Reparacao.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Tecnico.java" />
-        <option value="$PROJECT_DIR$/src/projecto/CP2/Divisao.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/TotalAvariasAno.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/TotalAnos.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Equipamento.java" />
-        <option value="$PROJECT_DIR$/src/projecto/CP2/Main.java" />
         <option value="$PROJECT_DIR$/src/projecto/CP2/Gestao.java" />
+        <option value="$PROJECT_DIR$/src/projecto/CP2/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="784" />
+    <option name="x" value="468" />
+    <option name="y" value="80" />
+    <option name="width" value="697" />
+    <option name="height" value="775" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -133,12 +316,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="CP2" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Projecto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Projecto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -149,7 +326,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/mingw64/bin/git.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Projecto-master (1)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -219,6 +396,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -228,12 +406,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49031296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30551416" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21449487" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20863836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -259,83 +437,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
-            <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
-            <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
-            <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
-            <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Funcionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1373#1374#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1591#1592#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
-            <element signature="e#1773#1774#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#1914#1915#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Equipamento.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2963#2964#0" expanded="true" />
-            <element signature="e#3083#3084#0" expanded="true" />
-            <element signature="e#3132#3133#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
-            <element signature="e#3876#3877#0" expanded="true" />
-            <element signature="e#3902#3903#0" expanded="true" />
-            <element signature="e#4168#4169#0" expanded="true" />
-            <element signature="e#4200#4201#0" expanded="true" />
+            <element signature="docComment;field#descricao#0;class#Equipamento#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -346,14 +453,14 @@
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#591#592#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#761#762#0" expanded="false" />
-            <element signature="e#805#806#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
+            <element signature="e#1092#1093#0" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="false" />
+            <element signature="e#1186#1187#0" expanded="false" />
+            <element signature="e#1236#1237#0" expanded="false" />
+            <element signature="e#1269#1270#0" expanded="false" />
+            <element signature="e#1298#1299#0" expanded="false" />
+            <element signature="e#1342#1343#0" expanded="false" />
+            <element signature="e#1378#1379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -364,14 +471,14 @@
           <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#583#584#0" expanded="false" />
-            <element signature="e#625#626#0" expanded="false" />
-            <element signature="e#659#660#0" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#773#774#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
+            <element signature="e#959#960#0" expanded="false" />
+            <element signature="e#987#988#0" expanded="false" />
+            <element signature="e#1029#1030#0" expanded="false" />
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1098#1099#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="e#1217#1218#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -381,8 +488,18 @@
         <state relative-caret-position="272">
           <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -392,7 +509,7 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -411,10 +528,10 @@
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#493#494#0" expanded="false" />
-            <element signature="e#522#523#0" expanded="false" />
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#602#603#0" expanded="false" />
+            <element signature="e#1111#1112#0" expanded="false" />
+            <element signature="e#1140#1141#0" expanded="false" />
+            <element signature="e#1184#1185#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -424,22 +541,16 @@
         <state relative-caret-position="1241">
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -451,16 +562,11 @@
           <folding>
             <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
             <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
             <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
             <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -470,37 +576,37 @@
         <state relative-caret-position="170">
           <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1373#1374#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1591#1592#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
-            <element signature="e#1773#1774#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#1914#1915#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="false" />
+            <element signature="e#1445#1446#0" expanded="false" />
+            <element signature="e#1491#1492#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1574#1575#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1673#1674#0" expanded="false" />
+            <element signature="e#1706#1707#0" expanded="false" />
+            <element signature="e#1735#1736#0" expanded="false" />
+            <element signature="e#1779#1780#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1878#1879#0" expanded="false" />
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1963#1964#0" expanded="false" />
+            <element signature="e#1995#1996#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+            <element signature="e#2065#2066#0" expanded="false" />
+            <element signature="e#2099#2100#0" expanded="false" />
+            <element signature="e#2142#2143#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2293#2294#0" expanded="false" />
+            <element signature="e#2332#2333#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2423#2424#0" expanded="false" />
+            <element signature="e#2471#2472#0" expanded="false" />
+            <element signature="e#2518#2519#0" expanded="false" />
+            <element signature="e#2564#2565#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -510,17 +616,7 @@
         <state relative-caret-position="34">
           <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2963#2964#0" expanded="true" />
-            <element signature="e#3083#3084#0" expanded="true" />
-            <element signature="e#3132#3133#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
-            <element signature="e#3876#3877#0" expanded="true" />
-            <element signature="e#3902#3903#0" expanded="true" />
-            <element signature="e#4168#4169#0" expanded="true" />
-            <element signature="e#4200#4201#0" expanded="true" />
+            <element signature="docComment;field#descricao#0;class#Equipamento#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -531,14 +627,14 @@
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#591#592#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#761#762#0" expanded="false" />
-            <element signature="e#805#806#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
+            <element signature="e#1092#1093#0" expanded="false" />
+            <element signature="e#1128#1129#0" expanded="false" />
+            <element signature="e#1186#1187#0" expanded="false" />
+            <element signature="e#1236#1237#0" expanded="false" />
+            <element signature="e#1269#1270#0" expanded="false" />
+            <element signature="e#1298#1299#0" expanded="false" />
+            <element signature="e#1342#1343#0" expanded="false" />
+            <element signature="e#1378#1379#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -549,14 +645,14 @@
           <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#583#584#0" expanded="false" />
-            <element signature="e#625#626#0" expanded="false" />
-            <element signature="e#659#660#0" expanded="false" />
-            <element signature="e#694#695#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#773#774#0" expanded="false" />
-            <element signature="e#813#814#0" expanded="false" />
+            <element signature="e#959#960#0" expanded="false" />
+            <element signature="e#987#988#0" expanded="false" />
+            <element signature="e#1029#1030#0" expanded="false" />
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1098#1099#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="e#1217#1218#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -566,8 +662,18 @@
         <state relative-caret-position="272">
           <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -577,7 +683,7 @@
         <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -596,10 +702,10 @@
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#493#494#0" expanded="false" />
-            <element signature="e#522#523#0" expanded="false" />
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#602#603#0" expanded="false" />
+            <element signature="e#1111#1112#0" expanded="false" />
+            <element signature="e#1140#1141#0" expanded="false" />
+            <element signature="e#1184#1185#0" expanded="false" />
+            <element signature="e#1220#1221#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,22 +715,16 @@
         <state relative-caret-position="1241">
           <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,16 +736,11 @@
           <folding>
             <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
             <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
             <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
             <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -655,37 +750,37 @@
         <state relative-caret-position="170">
           <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="37" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1373#1374#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1591#1592#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
-            <element signature="e#1773#1774#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#1914#1915#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="false" />
+            <element signature="e#1445#1446#0" expanded="false" />
+            <element signature="e#1491#1492#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1574#1575#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1673#1674#0" expanded="false" />
+            <element signature="e#1706#1707#0" expanded="false" />
+            <element signature="e#1735#1736#0" expanded="false" />
+            <element signature="e#1779#1780#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1878#1879#0" expanded="false" />
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1963#1964#0" expanded="false" />
+            <element signature="e#1995#1996#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+            <element signature="e#2065#2066#0" expanded="false" />
+            <element signature="e#2099#2100#0" expanded="false" />
+            <element signature="e#2142#2143#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2293#2294#0" expanded="false" />
+            <element signature="e#2332#2333#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2423#2424#0" expanded="false" />
+            <element signature="e#2471#2472#0" expanded="false" />
+            <element signature="e#2518#2519#0" expanded="false" />
+            <element signature="e#2564#2565#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,22 +790,16 @@
         <state relative-caret-position="1122">
           <caret line="72" column="66" lean-forward="false" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
           <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -722,16 +811,11 @@
           <folding>
             <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
             <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
             <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
             <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -741,37 +825,37 @@
         <state relative-caret-position="1360">
           <caret line="80" column="18" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1373#1374#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1591#1592#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
-            <element signature="e#1773#1774#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#1914#1915#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="false" />
+            <element signature="e#1445#1446#0" expanded="false" />
+            <element signature="e#1491#1492#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1574#1575#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1673#1674#0" expanded="false" />
+            <element signature="e#1706#1707#0" expanded="false" />
+            <element signature="e#1735#1736#0" expanded="false" />
+            <element signature="e#1779#1780#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1878#1879#0" expanded="false" />
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1963#1964#0" expanded="false" />
+            <element signature="e#1995#1996#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+            <element signature="e#2065#2066#0" expanded="false" />
+            <element signature="e#2099#2100#0" expanded="false" />
+            <element signature="e#2142#2143#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2293#2294#0" expanded="false" />
+            <element signature="e#2332#2333#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2423#2424#0" expanded="false" />
+            <element signature="e#2471#2472#0" expanded="false" />
+            <element signature="e#2518#2519#0" expanded="false" />
+            <element signature="e#2564#2565#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,22 +865,16 @@
         <state relative-caret-position="1122">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -808,16 +886,11 @@
           <folding>
             <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
             <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
             <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
             <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,37 +900,37 @@
         <state relative-caret-position="1360">
           <caret line="80" column="18" lean-forward="false" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#758#759#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-            <element signature="e#893#894#0" expanded="false" />
-            <element signature="e#924#925#0" expanded="false" />
-            <element signature="e#951#952#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#1056#1057#0" expanded="false" />
-            <element signature="e#1085#1086#0" expanded="false" />
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1228#1229#0" expanded="false" />
-            <element signature="e#1273#1274#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1373#1374#0" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1449#1450#0" expanded="false" />
-            <element signature="e#1492#1493#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1591#1592#0" expanded="false" />
-            <element signature="e#1643#1644#0" expanded="false" />
-            <element signature="e#1682#1683#0" expanded="false" />
-            <element signature="e#1717#1718#0" expanded="false" />
-            <element signature="e#1773#1774#0" expanded="false" />
-            <element signature="e#1821#1822#0" expanded="false" />
-            <element signature="e#1868#1869#0" expanded="false" />
-            <element signature="e#1914#1915#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="false" />
+            <element signature="e#1445#1446#0" expanded="false" />
+            <element signature="e#1491#1492#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="false" />
+            <element signature="e#1574#1575#0" expanded="false" />
+            <element signature="e#1601#1602#0" expanded="false" />
+            <element signature="e#1641#1642#0" expanded="false" />
+            <element signature="e#1673#1674#0" expanded="false" />
+            <element signature="e#1706#1707#0" expanded="false" />
+            <element signature="e#1735#1736#0" expanded="false" />
+            <element signature="e#1779#1780#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1847#1848#0" expanded="false" />
+            <element signature="e#1878#1879#0" expanded="false" />
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1963#1964#0" expanded="false" />
+            <element signature="e#1995#1996#0" expanded="false" />
+            <element signature="e#2023#2024#0" expanded="false" />
+            <element signature="e#2065#2066#0" expanded="false" />
+            <element signature="e#2099#2100#0" expanded="false" />
+            <element signature="e#2142#2143#0" expanded="false" />
+            <element signature="e#2179#2180#0" expanded="false" />
+            <element signature="e#2241#2242#0" expanded="false" />
+            <element signature="e#2293#2294#0" expanded="false" />
+            <element signature="e#2332#2333#0" expanded="false" />
+            <element signature="e#2367#2368#0" expanded="false" />
+            <element signature="e#2423#2424#0" expanded="false" />
+            <element signature="e#2471#2472#0" expanded="false" />
+            <element signature="e#2518#2519#0" expanded="false" />
+            <element signature="e#2564#2565#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -867,22 +940,16 @@
         <state relative-caret-position="1054">
           <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -903,22 +970,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dados.dat" />
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Reparacao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/io/ObjectStreamClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -930,38 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Medico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="18" lean-forward="false" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#555#556#0" expanded="false" />
-            <element signature="e#591#592#0" expanded="false" />
-            <element signature="e#649#650#0" expanded="false" />
-            <element signature="e#699#700#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#761#762#0" expanded="false" />
-            <element signature="e#805#806#0" expanded="false" />
-            <element signature="e#841#842#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/OutrosFuncionarios.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#493#494#0" expanded="false" />
-            <element signature="e#522#523#0" expanded="false" />
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#602#603#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -977,8 +996,8 @@
         <state relative-caret-position="215">
           <caret line="2113" column="15" lean-forward="false" selection-start-line="2113" selection-start-column="15" selection-end-line="2113" selection-end-column="15" />
           <folding>
-            <element signature="e#80161#80162#0" expanded="true" />
-            <element signature="e#80205#80206#0" expanded="true" />
+            <element signature="e#80161#80162#0" expanded="false" />
+            <element signature="e#80205#80206#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -991,128 +1010,184 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Equipamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2963#2964#0" expanded="true" />
-            <element signature="e#3083#3084#0" expanded="true" />
-            <element signature="e#3132#3133#0" expanded="true" />
-            <element signature="e#3525#3526#0" expanded="true" />
-            <element signature="e#3562#3563#0" expanded="true" />
-            <element signature="e#3876#3877#0" expanded="true" />
-            <element signature="e#3902#3903#0" expanded="true" />
-            <element signature="e#4168#4169#0" expanded="true" />
-            <element signature="e#4200#4201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Divisao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="1224">
+          <caret line="83" column="6" lean-forward="true" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1564#1565#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Avaria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Gestao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="327" column="1" lean-forward="true" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="1" />
-          <folding>
-            <element signature="method#adicionarTipoEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTipos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarFuncionario#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarEquipamento#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodosEquipamentos#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#procurarDesignacaoNasDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarDesignacaoDivisoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarTodasAvarias#0;class#Gestao#0" expanded="false" />
-            <element signature="method#adicionarReparacao#0;class#Gestao#0" expanded="false" />
-            <element signature="method#pesquisarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#mostrarReparacoes#0;class#Gestao#0" expanded="false" />
-            <element signature="method#gravarParaFicheiro#0;class#Gestao#0" expanded="false" />
-            <element signature="method#lerDoFicheiro#0;class#Gestao#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#2436#2437#0" expanded="true" />
+            <element signature="e#2484#2485#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Funcionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="114" column="32" lean-forward="true" selection-start-line="114" selection-start-column="32" selection-end-line="114" selection-end-column="32" />
+        <state relative-caret-position="2142">
+          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
-            <element signature="e#1129#1130#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Medico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/OutrosFuncionarios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Tecnico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        <state relative-caret-position="283">
+          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Reparacao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="997">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TipoEquipamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="58" column="58" lean-forward="false" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="58" />
+          <folding>
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOAVARIA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/ESTADOEQUIPAMENTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TotalAvariasAno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="83" lean-forward="false" selection-start-line="7" selection-start-column="83" selection-end-line="7" selection-end-column="83" />
+          <folding>
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#408#409#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/TotalAnos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding>
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Equipamento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#descricao#0;class#Equipamento#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Avaria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Gestao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="251" column="9" lean-forward="true" selection-start-line="251" selection-start-column="9" selection-end-line="251" selection-end-column="9" />
+          <folding>
+            <element signature="e#3403#3404#0" expanded="true" />
+            <element signature="e#3447#3448#0" expanded="true" />
+            <element signature="e#5880#5881#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#6143#6144#0" expanded="true" />
+            <element signature="e#6183#6184#0" expanded="true" />
+            <element signature="e#8168#8169#0" expanded="true" />
+            <element signature="e#8207#8208#0" expanded="true" />
+            <element signature="e#9369#9370#0" expanded="true" />
+            <element signature="e#9411#9412#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projecto/CP2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="36" column="57" lean-forward="true" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+        <state relative-caret-position="211">
+          <caret line="37" column="76" lean-forward="false" selection-start-line="37" selection-start-column="76" selection-end-line="37" selection-end-column="76" />
           <folding>
             <element signature="method#mostraMenu#0;class#Main#0" expanded="false" />
             <element signature="method#lerInteiro#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#alterarFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#removerFuncionario#0;class#Main#0" expanded="false" />
             <element signature="method#associarEquipamentoDivisao#0;class#Main#0" expanded="false" />
             <element signature="method#adicionarTipoEquipamento#0;class#Main#0" expanded="false" />
-            <element signature="method#inserirDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisaDivisao#0;class#Main#0" expanded="false" />
-            <element signature="method#criarAvaria#0;class#Main#0" expanded="false" />
             <element signature="method#alterarEstadoAvaria#0;class#Main#0" expanded="false" />
-            <element signature="method#pesquisarAvaria#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>

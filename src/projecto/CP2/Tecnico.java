@@ -3,13 +3,33 @@ package projecto.CP2;
 import java.io.Serializable;
 import java.util.Calendar;
 
-public class Tecnico extends OutrosFuncionarios implements Serializable{
-    private String login, password;
+/**
+ * Esta classe contém todos os dados sobre os técnicos
+ */
+public class Tecnico extends OutrosFuncionarios implements Serializable {
+    /**
+     * login e password do técnico
+     */
+    private String login, passworf;
 
+    /**
+     * Este é o construtor da classe tecnico
+     *
+     * @param nif
+     * @param nome
+     * @param morada
+     * @param telefone
+     * @param email
+     * @param dataNascimento
+     * @param habilitacoes
+     * @param funcao
+     * @param login
+     * @param password
+     */
     public Tecnico(int nif, String nome, String morada, int telefone, String email, Calendar dataNascimento, String habilitacoes, String funcao, String login, String passworf) {
         super(nif, nome, morada, telefone, email, dataNascimento, habilitacoes, funcao);
         this.login = login;
-        this.password = password;
+        this.passworf = passworf;
     }
 
     public String getLogin() {
@@ -21,13 +41,18 @@ public class Tecnico extends OutrosFuncionarios implements Serializable{
     }
 
     public String getPassworf() {
-        return password;
+        return passworf;
     }
 
     public void setPassworf(String passworf) {
-        this.password = passworf;
+        this.passworf = passworf;
     }
 
+    /**
+     * mostra todos os dados da classe técnico
+     *
+     * @return dados da classe técnico
+     */
     @Override
     public String toString() {
         return "Tecnico{" +
