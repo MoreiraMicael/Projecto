@@ -42,6 +42,8 @@ public class Gestao {
      */
     private ArrayList<Reparacao> reparacoes = new ArrayList<>();
 
+    private ArrayList<Formacao> formacoes= new ArrayList<>();
+
     /**
      * método para adicionar tipos de equipamentos
      *
@@ -464,5 +466,46 @@ public class Gestao {
             str.append(equipamentos.get(i).getTipoEquipamento());
         }
         return str.toString();
+    }
+
+    public String avariasPorDivisao() {
+        Avaria avaria;
+        Divisao div;
+        String estado;
+        int equipamentosInstalados;
+        String designcaoDivisao;
+        int numeroAvarias;
+        String designcao;
+
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < divisoes.size(); i++) {
+            designcaoDivisao = obterDivisao(i).getDesignacao();
+            equipamentosInstalados = obterDivisao(i).getEquipamentosInstalados();
+            for (int j = 0; j < avarias.size(); j++) {
+                if (pesquisarAvaria(obterAvaria(j).getEstadoAvaria(estado) = ESTADOAVARIA.porReparar);
+                numeroAvarias++;
+            }
+            System.out.println("Divisão: " + designcaoDivisao + "Avaria: " + numeroAvarias );
+        }
+    }
+
+    ////////////////////////////////////////////////////////FORMACAO
+
+    public void criarFormacao(Formacao formacao) {
+        formacao.setIdFormacao(formacoes.size() + 1);
+        formacoes.add(formacao);
+    }
+
+    public int pesquisarFormacao(int idFormacao) {
+        for (int i = 0; i < formacoes.size(); i++) {
+            if (formacoes.get(i).getIdFormacao() == idFormacao) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Formacao obterFormacao(int idFormacao) {
+        return formacoes.get(idFormacao);
     }
 }

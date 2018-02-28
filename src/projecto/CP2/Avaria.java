@@ -77,7 +77,7 @@ public class Avaria implements Serializable {
         this.funcionarioRegistou = funcionarioRegistou;
     }
 
-    public ESTADOAVARIA getEstadoAvaria() {
+    public ESTADOAVARIA getEstadoAvaria(String estado) {
         return estadoAvaria;
     }
 

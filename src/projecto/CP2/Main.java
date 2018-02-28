@@ -19,6 +19,9 @@ public class Main {
             "4 - Gerir Equipamentos",
             "5 - Gerir Avarias",
             "6 - Estatisticas",
+            "7 - Alterar localização de uma divisão",
+            "8 - Inserir Formação",
+            "9 - Mostrar o número total de avarias por divisão",
             "0 - Sair"};
 
     static String[] menuFunc = {"1 - Inserir Funcionário", "2 - Alterar Funcionário", "3 - Consultar todos Funcionários", "4 - Eliminar Funcionários", "0 - Voltar"};
@@ -28,6 +31,9 @@ public class Main {
     static String[] menuEq = {"1 - Inserir Equipamento", "2 - Consultar todos equipamentos", "3 - Associar Equipamento a Divisão", "4 - Consultar por Divisão", "0 - Voltar"};
     static String[] menuAv = {"1 - Registar Avaria", "2 - Consultar Avaria", "3 - Alterar estado avaria", "4 - Reparações", "0 - Voltar"};
     static String[] menuEstatisticas = {"1 - Percentagem de equipamentos com avarias no hospital", "2 - ", "3 - ", "4 - ", "0 - Voltar"};
+    static String[] menuAlterarLocalizaçao = {"1 - Alterar localizacao", "0 - Voltar"};
+    static String[] menuInserirFormacao = {"1 - Inserir Formação", "0 - Voltar"};
+    static String[] menuNumeroTotalAvariasDivisao = {"1 - Mostrar o numero total de avarias por divisão", "0 - Voltar"};
 
     public static void main(String[] args) {
         int opcao = 0;
@@ -212,6 +218,64 @@ public class Main {
                                 break;
                         }
                     } while (opcao8 != 0);
+                    break;
+                case 7://Alterar localização
+                    int opcao9 = 0;
+                    do {
+                        System.out.println("### Alterar localização ###");
+                        mostraMenu(menuAlterarLocalizaçao);
+                        opcao9 = lerInteiro("Introduza uma Opção: ", 0, 1);
+                        switch (opcao9) {
+                            case 1:
+                                if (gestao.getNumeroTotalDivisoes() > 0) {
+                                    alterarLocalizacaoDivizao();
+                                }else System.out.println("Não Existem Divisoes Inseridas.\n ");
+                                break;
+                            default:
+                                gestao.gravarParaFicheiro();
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
+                                break;
+                        }
+                    } while (opcao9 != 0);
+                    break;
+                case 8://Inserir formação
+                    int opcao10 = 0;
+                    do {
+                        System.out.println("### Inserir Formação ###");
+                        mostraMenu(menuInserirFormacao);
+                        opcao10 = lerInteiro("Introduza uma Opção: ", 0, 1);
+                        switch (opcao10) {
+                            case 1:
+                                    criarFormacao();
+                                break;
+                            default:
+                                gestao.gravarParaFicheiro();
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
+                                break;
+                        }
+                    } while (opcao10 != 0);
+                    break;
+                case 9://Inserir formação
+                    int opcao11 = 0;
+                    do {
+                        System.out.println("### Inserir Formação ###");
+                        mostraMenu(menuInserirFormacao);
+                        opcao11 = lerInteiro("Introduza uma Opção: ", 0, 1);
+                        switch (opcao11) {
+                            case 1:
+                                if (gestao.getNumeroTotalDivisoes() > 0 && gestao.getNumeroTotalAvarias() > 0) {
+                                    gestao.avariasPorDivisao();
+                                }else System.out.println("Não Existem Divisoes ou Avarias Inseridas.\n ");
+                                break;
+                            default:
+                                gestao.gravarParaFicheiro();
+                                System.out.println("A Guardar Alterações..\n");
+                                System.out.println("A Voltar ao Menu Anterior..");
+                                break;
+                        }
+                    } while (opcao11 != 0);
                     break;
                 case 0:
                     System.out.println("0- A sair...");
@@ -485,6 +549,29 @@ public class Main {
         }while (j != -1);
     }
 
+    public static Divisao alterarLocalizacaoDivizao() {
+        Divisao divisao;
+        String designacao, localizacao;
+        int j;
+
+        int opcao = 0;
+
+        System.out.println(gestao.mostrarTodasDivisoes());
+        designacao = Consola.lerString("Indique a Designacao da divisão que preteende alterar a localizacao: ");
+        j = gestao.procurarDesignacaoNasDivisoes(designacao);
+        divisao = gestao.obterDivisao(j);
+
+        if (j == -1) {
+            System.err.println("Não existe nenhuma divisão com essa designcao, ou designacao introduzida incorrectamente. ");
+        } else {
+
+                        localizacao = Consola.lerString("Indique a nova localização da divisão: ");
+                        divisao.setLocalizacao(localizacao);
+                        divisao =  new Divisao(divisao.designacao, localizacao, divisao.equipamentosInstalados);
+        }
+        return divisao;
+    }
+
     //Pesquisa por campo unico: designacao
     private static void pesquisaDivisao() {
         int j;
@@ -642,5 +729,39 @@ public class Main {
         }while (j == -1);
         equipamento = gestao.obterEquipamento(j);
         System.out.println(equipamento.mostrarReparacoes());
+    }
+
+    /////////////////////////////////////////////////FORMACAO
+    public static void criarFormacao() {
+        int j, n, nifFuncionario, numeroInventario;
+        String descricao;
+        Calendar dataFormacao = Calendar.getInstance();
+        Funcionario funcionario;
+        Equipamento equipamento;
+        Formacao formacao;
+
+        do {
+            System.out.println(gestao.mostrarTodosFuncionarios());
+            nifFuncionario = Consola.lerInt("Insira o nif do funcionario que realizou a formação: ", 000000000, 999999999);
+            j = gestao.pesquisarFuncionario(nifFuncionario);
+            funcionario = gestao.obterFuncionario(j);
+            if (funcionario instanceof Tecnico) {
+                if (j == -1) {
+                    System.out.println("Nenhum funcionario encontrado com esse nif. ");
+                }
+            }
+        } while (j == -1);
+        do {
+            numeroInventario = Consola.lerInt("Insira o numero de inventario do equipamento que o tecnico realizou a formação: ", 000000000, 999999999);
+            n = gestao.pesquisarEquipamento(numeroInventario);
+            equipamento = gestao.obterEquipamento(n);
+            if (n == -1)
+                System.err.println("Numero incorrecto ou não existe nehum equipamento com esse numero");
+        } while (n == -1);
+        descricao = Consola.lerString("Insira a descricao da formacao: ");
+        System.out.println("Formacao inserida com Sucesso!");
+        funcionario = gestao.obterFuncionario(j);
+        formacao = new Formacao(descricao, dataFormacao, funcionario, equipamento);
+        gestao.criarFormacao(formacao);
     }
 }
